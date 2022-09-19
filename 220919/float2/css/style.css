@@ -1,0 +1,40 @@
+@charset 'utf-8';
+
+.wrap {
+    width: 600px;
+    margin: 100px auto;
+    border: 10px solid red;
+}
+.wrap::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.wrap .box1 {
+    width: 200px;
+    height: 200px;
+    float: left;
+    background-color: #666;
+}
+
+.wrap .box2 {
+    width: 200px;
+    height: 200px;
+    float: left;
+    background-color: #888;
+}
+
+.wrap .box3 {
+    width: 200px;
+    height: 400px;
+    float: right;
+    background-color: #aaa;
+}
+
+.wrap .box4 {
+    width: 400px;
+    height: 200px;
+    float: left;
+    background-color: #ccc;
+}

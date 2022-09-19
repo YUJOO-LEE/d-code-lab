@@ -1,0 +1,33 @@
+@charset 'uft-8';
+
+.wrap {
+    width: 800px;
+    margin: 50px auto;
+    border: 10px solid red;
+}
+.wrap::after { content: ''; display: block; clear: both; }
+
+.wrap .left {
+    width: 200px;
+    float: left; 
+}
+.wrap .left div { width: 200px; height: 200px; }
+.wrap .left div:nth-of-type(1) { background-color: #111; }
+.wrap .left div:nth-of-type(2) { background-color: #333; }
+.wrap .left div:nth-of-type(3) { background-color: #555; }
+
+.wrap .center {
+    width: 400px;
+    height: 600px;
+    float: left;
+    background-color: #ddd;
+}
+
+.wrap .right {
+    width: 200px;
+    float: left;
+}
+.wrap .right div { width: 200px; height: 200px; }
+.wrap .right div:nth-of-type(1) { background-color: #777; }
+.wrap .right div:nth-of-type(2) { background-color: #999; }
+.wrap .right div:nth-of-type(3) { background-color: #bbb; }
