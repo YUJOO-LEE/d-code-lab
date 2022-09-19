@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* 문자 인코딩 방식으로 www의 가장 일반적인 문자 인코딩 방식 */
+
+/* reset */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+1. 먼저 좌우배치할 모든 블록요소 태그에 flot을 설정
+-> 부모가 해당 요소의 높이값을 인지하지 못함.
+
+2. float 된 요소의 직계부모에 플롯해제를 해준다.
+*/
+.wrap {
+    width: 600px;
+    margin: 50px auto;
+    border: 10px solid red;
+}
+.wrap::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.wrap .box1 {
+    width: 200px;
+    height: 400px;
+    background: #555;
+    float: left;
+}
+
+.wrap .box2 {
+    width: 200px;
+    height: 200px;
+    background: #777;
+    float: left;
+}
+
+.wrap .box3 {
+    width: 200px;
+    height: 200px;
+    background: #999;
+    float: left;
+}
+
+.wrap .box4 {
+    width: 400px;
+    height: 200px;
+    background: #bbb;
+    float: left;
+}
