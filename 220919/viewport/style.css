@@ -1,0 +1,36 @@
+@charset 'utf-8';
+
+*{ margin: 0; padding: 0; }
+
+div{
+    width: 100%;
+    height: 100vh;
+}
+div span{
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 10vh;
+    padding-top: 20vh;
+}
+
+.box1{
+    background-color: pink;
+}
+.box1 span{
+    font-size: 300px;
+}
+
+.box2{
+    background-color: lightblue;
+}
+.box2 span{
+    font-size: 10vw;
+}
+
+.box3{
+    background-color: lightgreen;
+}
+.box3 span{
+    font-size: 10vmax;
+}

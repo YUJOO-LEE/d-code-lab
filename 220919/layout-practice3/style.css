@@ -1,0 +1,118 @@
+@charset 'utf-8';
+
+*{ margin: 0; padding: 0; }
+ul,ol,li{ list-style: none; }
+a{ text-decoration: none; color: inherit;}
+
+.hidden{
+    position: absolute;
+    top: -999999px;
+    opacity: 0;
+}
+
+#box2{
+    width: 100%;
+    height: 100vh;
+    background: #efefef;
+    padding: 150px 0;
+}
+#box2 .inner{
+    width: 1180px;
+    margin: 0 auto;
+    position: relative;
+}
+#box2 .inner .wrap{
+    width: 100%;
+}
+#box2 .inner .wrap::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+#box2 .inner>.wrap>article{
+    width: 280px;
+    height: 200px;
+    float: left;
+    background-color: white;
+    margin-right: 20px;
+    padding: 35px 30px;
+    position: relative;
+    box-sizing: border-box;
+}
+#box2 .inner>.wrap>article:last-of-type{
+    margin-right: 0;
+}
+#box2 .inner>.wrap>article h2{
+    font: 20px/1 'arial';
+    color: #444;
+    margin-bottom: 20px;
+    text-align: center;
+}
+#box2 .inner>.wrap>article:nth-of-type(1) h3{
+    font: bold 15px/1 'arial';
+    color: #777;
+    margin-bottom: 5px;
+    text-align: center;
+}
+#box2 .inner>.wrap>article:nth-of-type(1) p{
+    font: 12px/1.2 'arial';
+    color: #888;
+    margin-bottom: 20px;
+    text-align: center;
+}
+#box2 .inner>.wrap>article:nth-of-type(1) .btn{
+    display: block;
+    width: 100%;
+    height: 30px;
+    border: 1px solid #bbb;
+    color: #666;
+    font: bold 12px/30px 'arial';
+    text-align: center;
+}
+
+#box2 .inner>.wrap>article:nth-of-type(2) article{
+    float: left;
+    width: 33.333%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+#box2 .inner>.wrap>article:nth-of-type(2) a{
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #eee;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #999;
+    margin-bottom: 10px;
+}
+#box2 .inner>.wrap>article:nth-of-type(2) strong{
+    font-size: 14px;
+}
+
+#box2 .inner>.wrap>article:nth-of-type(3) h2,
+#box2 .inner>.wrap>article:nth-of-type(4) h2{
+    font: bold 20px/1 'arial';
+    color: #444;
+    margin-bottom: 24px;
+    text-align: left;
+}
+#box2 .inner>.wrap>article:nth-of-type(3) ul li,
+#box2 .inner>.wrap>article:nth-of-type(4) ul li{
+    margin-bottom: 2px;
+}
+#box2 .inner>.wrap>article:nth-of-type(3) ul li a,
+#box2 .inner>.wrap>article:nth-of-type(4) ul li a{
+    font: 14px/1 'arial';
+    color: #555;
+    letter-spacing: 2px;
+}
+#box2 .inner>.wrap>article:nth-of-type(3) .btnMore,
+#box2 .inner>.wrap>article:nth-of-type(4) .btnMore{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #aaa;
+}
