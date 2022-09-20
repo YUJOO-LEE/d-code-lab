@@ -69,7 +69,6 @@ section .profile .btnView{
     color: #fff;
     text-align: center;
     margin-bottom: 20px;
-    background-color: pink;
 }
 
 /* contact */
@@ -85,5 +84,61 @@ section .contact li{
 section .contact li:last-child{
     border-bottom: none;
 }
+section .contact li i{
+    width: 20%;
+    text-align: center;
+    font-size: 15px;
+    color: #555;
+    text-shadow: 2px 2px 2px #ddd;
+}
+section .contact li span{
+    font-size: 11px;
+    font-family: 'Orbitron';
+    color: #555;
+    letter-spacing: 1px;
+}
 
 /* others */
+section .others{
+    width: 100%;
+    text-align: center;
+}
+section .others a{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 0 10px;
+    opacity: 0.4;
+}
+section .others a.on{
+    opacity: 1;
+}
+section .others a:nth-of-type(1){
+    background-color: #35e0f7;
+    box-shadow: 5px 5px 10px rgba(74, 255, 255, 0.7);
+}
+section .others a:nth-of-type(2){
+    background-color: #55f5cd;
+    box-shadow: 5px 5px 10px rgba(85, 245, 178, 0.7);
+}
+section .others a:nth-of-type(3){
+    background-color: #ff80df;
+    box-shadow: 5px 5px 10px rgba(255, 128, 223, 0.7);
+}
+section .others a:nth-of-type(4){
+    background-color: #a794fd;
+    box-shadow: 5px 5px 10px rgba(167, 148, 253, 0.7);
+}
+
+/* 멤버 별 프로필 스타일 적용 */
+.member1{
+    background-color: #ebfaff;
+}
+.member1 section article img{
+    box-shadow: 5px 15px 30px rgba(173, 216, 230, 0.8);
+}
+.member1 section article .btnView{
+    background: linear-gradient(45deg, #4affff, #35e0f7);   /* 그라디언트 각도, 시작 컬러, 마지막 컬러 */
+    box-shadow: 5px 5px 10px rgba(74, 255, 255, 0.7);
+}

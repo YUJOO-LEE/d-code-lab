@@ -1,0 +1,122 @@
+@charset 'utf-8';
+
+*{ margin: 0; padding: 0; }
+
+div{
+  width: 1293px;
+  margin: 50px auto;
+  padding: 10px;
+  position: relative;
+}
+
+div img{
+  width: 200px;
+  margin: 6px;
+}
+
+div p{
+  position: absolute;
+  text-align: center;
+  width: 636px;
+  bottom: 100px;
+  font-size: 50px;
+}
+
+div img:nth-of-type(1){
+  width: 636px;
+  float: left;
+}
+
+div img:nth-of-type(2){
+  filter: blur(4px);
+  /* 
+    blur (px)
+    이미지 흐림 효과 적용
+    값이 클수록 흐려짐
+    기본값 0
+  */
+}
+
+div img:nth-of-type(3){
+  filter: brightness(150%);
+  /*
+    brightness (%)
+    이미지의 밝기 조정
+    0% : 이미지를 완전히 검정색으로 만듬 (불끄기)
+    100% : 기본값 (원본)
+    100%보다 높을수록 밝음 (max 200%)
+  */
+}
+
+div img:nth-of-type(4){
+  filter: contrast(150%);
+  /*
+    contrast (%)
+    이미지 대비 조정
+    0% : 이미지 완전히 검정색으로 만듬
+    100% : 기본값 (원본)
+    100%보다 높을수록 대비 높아짐
+  */
+}
+
+div img:nth-of-type(5){
+  filter: grayscale(100%);
+  /*
+    grayscale (%)
+    이미지를 회색조로 변환
+    0% : 기본값
+    100% : 최고값 (회색)
+    - 음수값 적용 불가
+  */
+}
+
+div img:nth-of-type(6){
+  filter: hue-rotate(300deg);
+  /*
+    hue-rotate (deg)
+    이미지 색조 회전 적용
+    0deg : 기본값
+    360deg : 최대값
+    - 400deg = 40deg
+  */
+}
+
+div img:nth-of-type(7){
+  filter: invert(100%);
+  /*
+    invert (%)
+    이미지 샘플 반전
+    0% : 기본값
+    100% : 완전히 반전
+    - 음수값 적용 불가
+  */
+}
+
+div img:nth-of-type(8){
+  filter: saturate(20%);
+  /*
+    saturate (%)
+    이미지 포화. 채도 관련 필터
+    0% : 완전히 불포화
+    100% : 기본값
+    - 음수값 적용 불가
+  */
+}
+
+div img:nth-of-type(9){
+  filter: sepia(100%);
+  /*
+    sepia (%)
+    이미지를 세피아로 변환
+    0% : 기본값
+    100% : 최대값. 완전한 세피아
+  */
+}
+
+div img:nth-of-type(10){
+  filter: opacity(30%);
+  /*
+    하나 남아서 적용해봄
+    opacity가 따로 생겨서 filter로는 안쓰는걸까
+  */
+}
