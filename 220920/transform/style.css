@@ -1,0 +1,102 @@
+@charset 'utf-8';
+
+/* reset */
+* { margin: 0; padding: 0; }
+
+/* 공통사항 */
+section{
+  width: 100%;
+}
+section article{
+  width: 200px;
+  height: 200px;
+  border: 5px solid #000;
+  float: left;
+  margin: 50px;
+  position: relative;
+}
+section article div{
+  width: 100%;
+  height: 100%;
+  line-height: 200px;
+  font-size: 30px;
+  background-color: blue;
+  color: white;
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+/* 
+  * 이동
+  translateX(n) : x축으로 이동
+  translateY(n) : y축으로 이동
+  translate(x,y)
+*/
+.box2 div{
+  transform: translateX(50px);
+}
+.box3 div{
+  transform: translateY(-50px);
+}
+.box4 div{
+  transform: translate(50px, 50px);
+}
+
+/* 
+  * 크기조정
+  1을 기준으로 크면 확대 작으면 축소
+  scale(n) 특정 크기만큼 확대 또는 축소
+  scaleX(n) : x축으로 확대 또는 축소
+  scaleY(n) : y축으로 확대 또는 축소
+*/
+.box5 div{
+  transform: scaleX(1.2);
+}
+.box6 div{
+  transform: scaleY(1.2);
+}
+.box7 div{
+  transform: scale(1.2);
+}
+
+/*
+  * 기울이기
+  skew(x,y)
+  skewX(n) : 특정 각도만큼 x축으로 기울이기
+  skewY(n) : 특정 각도만큼 y축으로 기울이기
+*/
+.box8 div{
+  transform: skewX(45deg);
+}
+.box9 div{
+  transform: skewY(45deg);
+}
+.box10 div{
+  transform: skew(20deg, 20deg);
+}
+
+/*
+  * 회전시키기
+  rotate(n) : 특정 각도만큼 회전시키기
+  - 양수 : 시계방향
+  - 음수 : 반시계방향
+*/
+.box11 div{
+  transform: rotate(45deg);
+}
+
+/*
+  * 한번에 쓸때 주의사항
+  사용 순서대로 순차 적용 되므로 순서에 주의!
+*/
+.box12 div{
+  transform: translateX(50px) rotate(20deg);
+  line-height: 100px;
+}
+.box13 div{
+  transform: rotate(20deg) translateX(50px);
+  line-height: 100px;
+}
