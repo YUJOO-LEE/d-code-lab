@@ -11,6 +11,7 @@
 
 #wrap:hover section{
   animation-play-state: paused;
+  /* hover시 일시정지 */
 }
 
 #wrap section{
@@ -19,8 +20,7 @@
   position: relative;
   transform-style: preserve-3d;
   /* 3d 변환 요소의 자식 요소에도 3d 변환 효과 적용 */
-
-  animation: ani linear 3s infinite;
+  animation: ani linear 5s infinite;
 }
 
 #wrap section article{
@@ -55,6 +55,7 @@
 #wrap section article:nth-of-type(5){
   background-color: blue;
   transform: rotateX(90deg) translateZ(200px);
+  /* 위로 돌려서 보고있는 방향으로 앞으로 200px 나오게하기 */
 }
 #wrap section article:nth-of-type(6){
   background-color: purple;
@@ -62,10 +63,12 @@
 }
 
 @keyframes ani {
+  /* 한쪽 축만 두배로 돌려서 모든 면 한번씩 다 보이게
+    100%와 0%는 보이는 면이 같아야 함 */
   0% {
     transform: rotateY(0deg) rotateX(0deg);
   }
   100% {
-    transform: rotateY(360deg) rotateX(360deg);
+    transform: rotateY(360deg) rotateX(720deg);
   }
 }
