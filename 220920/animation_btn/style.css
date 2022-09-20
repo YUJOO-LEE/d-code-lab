@@ -1,0 +1,101 @@
+@charset 'utf-8';
+
+/* reset */
+*{ margin: 0; padding: 0; box-sizing: border-box; }
+ul,ol,li{ list-style: none; }
+a{ text-decoration: none; color: inherit; }
+
+
+/* 공통 */
+a{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 100px;
+  position: relative;
+}
+
+a::before, a::after{
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transition: 0.5s;
+}
+
+strong{
+  display: block;
+  font: 12px/1 'arial';
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transition: 0.5s;
+}
+
+
+/* prev 버튼 */
+.prev::before{
+  transform-origin: left center;
+  transform: rotate(-30deg);
+}
+.prev::after{
+  transform-origin: left center;
+  transform: rotate(30deg);
+}
+.prev strong{
+  transform: translate(100%, -50%);
+  /* 중앙 정렬 후 자기 크기만큼 뺀값 + x축으로 추가 이동 */
+}
+
+/* prev 호버시 효과*/
+.prev:hover:before{
+  top: 0;
+  transform-origin: center center;
+  transform: rotate(-180deg);
+  /* 평평하게 붙인 0deg 에서 180도 반시계 방향 회전된 모양 */
+}
+.prev:hover::after{
+  top: 100%;
+  transform-origin: center center;
+  transform: rotate(180deg);
+  /* 평평하게 붙인 0deg 에서 180도 시계 방향 회전된 모양 */
+}
+.prev:hover strong{
+  transform: translate(-50%, -50%);
+  /* 중앙 정렬 */
+}
+
+
+/* next 버튼 */
+.next::before{
+  transform-origin: right center;
+  transform: rotate(30deg);
+}
+.next::after{
+  transform-origin: right center;
+  transform: rotate(-30deg);
+}
+.next strong{
+  transform: translate(-200%, -50%);
+  opacity: 0;
+}
+
+/* next 호버시 효과 */
+.next:hover:before{
+  top: 0;
+  transform-origin: center center;
+  transform: rotate(180deg);
+}
+.next:hover::after{
+  top: 100%;
+  transform-origin: center center;
+  transform: rotate(-180deg);
+}
+.next:hover strong{
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
