@@ -142,3 +142,36 @@ section .others a:nth-of-type(4){
     background: linear-gradient(45deg, #4affff, #35e0f7);   /* 그라디언트 각도, 시작 컬러, 마지막 컬러 */
     box-shadow: 5px 5px 10px rgba(74, 255, 255, 0.7);
 }
+
+.member2{
+    background-color: #edffeb;
+}
+.member2 section article img{
+    box-shadow: 5px 15px 30px #bdccb783;
+}
+.member1 section article .btnView{
+    background: linear-gradient(45deg, #a0ff9d, #55f5b2);   /* 그라디언트 각도, 시작 컬러, 마지막 컬러 */
+    box-shadow: 5px 5px 10px rgba(33, 250, 105, 0.3);
+}
+
+.member3{
+    background-color: #fff3fd;
+}
+.member3 section article img{
+    box-shadow: 5px 15px 30px rgba(252,99,214,0.2);
+}
+.member3 section article .btnView{
+    background: linear-gradient(45deg, #ef74ff, #ff11c4);   /* 그라디언트 각도, 시작 컬러, 마지막 컬러 */
+    box-shadow: 5px 5px 10px rgba(255, 17, 196, 0.357);
+}
+
+.member4{
+    background-color: #f5f0ff;
+}
+.member4 section article img{
+    box-shadow: 5px 15px 30px rgba(183,82,250,0.2);
+}
+.member4 section article .btnView{
+    background: linear-gradient(45deg, #8e74ff, #a011ff);   /* 그라디언트 각도, 시작 컬러, 마지막 컬러 */
+    box-shadow: 5px 5px 10px rgba(160, 17, 255, 0.4);
+}
