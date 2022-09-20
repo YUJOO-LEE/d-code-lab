@@ -28,11 +28,11 @@
 }
 
 @keyframes day {
-  0% {opacity: 0;}
-  25% {opacity: 1;}
-  50% {opacity: 1;}
-  75% {opacity: 0;}
-  100% {opacity: 0;}  
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  50% { opacity: 1; }
+  75% { opacity: 0; }
+  100% { opacity: 0; }  
 }
 
 .sky .sun{
@@ -53,21 +53,11 @@
 }
 
 @keyframes sun {
-  0% {
-    transform: rotate(-90deg);
-  }
-  25%{
-    transform: rotate(-30deg);
-  }
-  50%{
-    transform: rotate(30deg);
-  }
-  75%{
-    transform: rotate(90deg);
-  }
-  100% {
-    transform: rotate(-90deg);
-  }
+  0% { transform: rotate(-90deg); }
+  25%{ transform: rotate(-30deg); }
+  50%{ transform: rotate(30deg); }
+  75%{ transform: rotate(90deg); }
+  100% { transform: rotate(-90deg); }
 }
 
 .people{

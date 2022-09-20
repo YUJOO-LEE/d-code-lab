@@ -42,6 +42,7 @@
 #wrap section article:nth-of-type(2){
   background-color: orange;
   transform: rotateY(90deg) translateZ(200px);
+  /* 옆으로 돌려서 보고있는 방향으로 앞으로 200px 나오게하기 */
 }
 #wrap section article:nth-of-type(3){
   background-color: yellow;
