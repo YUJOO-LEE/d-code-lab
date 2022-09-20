@@ -1,0 +1,68 @@
+@charset 'utf-8';
+
+/*
+  3차원 변환
+
+  rotateX() : x축 기준으로 특정 각도만큼 입체감 있게 회전
+  rotateY() : y축 기준으로 특정 각도만큼 입체감 있게 회전
+
+  translateZ() : z축 기준으로 특정 거리만큼 이동
+
+  perspective : 원근감 부여하는 속성(부모요소에 적용)
+  - 400px ~ 2000px
+
+  transform-origin : 요소의 변형이 일어나는 중심축을 이동
+  - 기본적으로 요소의 정 중앙
+*/
+
+section{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+section article{
+  width: 200px;
+  height: 200px;
+  border: 5px solid #000;
+  margin: 100px;
+  position: relative;
+  perspective: 900px;
+}
+
+section article div{
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.box1 div{
+  transform: rotateX(0deg);
+  transition: 0.5s;
+  transform-origin: bottom center;
+}
+.box1:hover div{
+  transform: rotateX(-45deg); /* 양수 내쪽으로, 음수 바깥쪽으로 회전*/
+}
+
+.box2 div{
+  transform: rotateY(0deg);
+  transition: 0.5s;
+  transform-origin: center right;
+}
+.box2:hover div{
+  transform: rotateY(45deg); /* 양수 반시계 방향 회전 */
+}
+
+.box3 div{
+  transform: translateZ(0px);
+  transition: 0.5s;
+}
+.box3:hover div{
+  transform: translateZ(300px); /* 양수 가까이옴, 음수 멀리감*/
+}
