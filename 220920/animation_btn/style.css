@@ -31,7 +31,6 @@ strong{
   display: block;
   font: 12px/1 'arial';
   top: 50%;
-  left: 50%;
   position: absolute;
   transition: 0.5s;
 }
@@ -47,11 +46,12 @@ strong{
   transform: rotate(30deg);
 }
 .prev strong{
+  left: 50%;
   transform: translate(100%, -50%);
   /* 중앙 정렬 후 자기 크기만큼 뺀값 + x축으로 추가 이동 */
 }
 
-/* prev 호버시 효과*/
+/* prev hover시 효과*/
 .prev:hover:before{
   top: 0;
   transform-origin: center center;
@@ -80,11 +80,12 @@ strong{
   transform: rotate(-30deg);
 }
 .next strong{
-  transform: translate(-200%, -50%);
+  right: 50%;
+  transform: translate(-100%, -50%);
   opacity: 0;
 }
 
-/* next 호버시 효과 */
+/* next hover시 효과 */
 .next:hover:before{
   top: 0;
   transform-origin: center center;
@@ -96,6 +97,6 @@ strong{
   transform: rotate(-180deg);
 }
 .next:hover strong{
-  transform: translate(-50%, -50%);
+  transform: translate(50%, -50%);
   opacity: 1;
 }
