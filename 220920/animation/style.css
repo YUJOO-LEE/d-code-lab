@@ -1,0 +1,80 @@
+@charset 'utf-8';
+
+*{ margin: 0; padding: 0; }
+
+/*
+  animation
+  - 사용자가 동작을 하지 않아도 미리 지정한 조건에 맞게 자동으로 반복 / 루틴에 따라서 효과를 진행하는 효과
+
+  @keyframes : 애니메이션 세트 지정
+  - 애니메이션 시작과 끝 등록하여 사용자 모션 지정
+  - 0% (from) : 시작지점
+  - 100% (to) : 종료지점
+  - 중간 지점도 추가 가능
+
+  animation-name : 이름
+  - 키프레임으로 등록한 모션 이름 호출
+
+  animation-duration : 지속 시간
+  - 키프레임 모션 한 세트 동작 시간 초단위로 지정
+
+  animation-timing-fuction : 가속도
+  - 키프레임 모션 실행할 때 가속도 설정
+
+  animation-iteration-count : 횟수
+  - 키프레임 모션 한 세트가 몇 번 반복할 지 횟수 지정
+  - 무한반복 infinite
+
+  animation-delay : 지연시간
+  - 키프레임 모션 실행 시 지연시간 설정
+
+  animation-play-state : 동작상태
+  - 키프레임 모션 실행할 때 동작 상태를 지정
+  - running / paused
+
+  animation-direction : 반복 형태
+  - normal : 계속 0 ~ 100%으로 이동
+  - alternate : 0 ~ 100% ~ 0 갔다가 되돌아오기
+
+  <같이쓸때>
+  - animation: name duration timing-function delay iteration-count direction fill-mode;
+  - animation : 이름 진행시간 가속도 지연시간 반복횟수;
+*/
+
+#box{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  text-align: center;
+  background: linear-gradient(45deg, violet, crimson);
+
+  animation-name: ani;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#box h1{
+  line-height: 200px;
+}
+
+#box:hover{
+  animation-play-state: paused;
+}
+
+@keyframes ani {
+  0% {
+    left: 0px;
+    transform: rotateX(0deg);
+  }
+  50% {
+    left: 500px;
+    transform: rotateX(270deg);
+  }
+  100% {
+    left: 700px;
+    transform: rotateX(0deg) rotateY(360deg);
+  }
+}
