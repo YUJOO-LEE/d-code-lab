@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3단 메뉴</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://kit.fontawesome.com/08c501c945.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header id="header">
+    <div class="inner">
+      <a href="#" class="logo">
+        <i class="fa-brands fa-apple"></i>
+      </a>
+      <nav class="nav_web">
+        <!-- 카멜 표기법 : navWeb / 스네이크 표기법 : nav_web  = 합성어 분리해서 표기 -->
+        <ul id="gnb">
+          <li>
+            <a href="./index.html">HOME</a>
+          </li>
+          <li>
+            <a href="#">ABOUT</a>
+            <div class="sub_menu1">
+              <ul>
+                <li><a href="#">ABOUT SUB1</a></li>
+                <li><a href="#">ABOUT SUB2</a></li>
+                <li><a href="#">ABOUT SUB3</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">YOUTUBE</a>
+            <div class="sub_menu1">
+              <ul>
+                <li><a href="#">YOUTUBE1</a></li>
+                <li class="hasSub">
+                  <a href="#">YOUTUBE2</a>
+                  <i class="fa fa-angle-right"></i>
+                  <div class="sub_menu2">
+                    <ul>
+                      <li><a href="#">SUB2-1</a></li>
+                      <li><a href="#">SUB2-2</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li><a href="#">YOUTUBE3</a></li>
+                <li><a href="#">YOUTUBE4</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">COMMUNITY</a>
+            <div class="sub_menu1">
+              <ul>
+                <li><a href="#">COMMUNITY1</a></li>
+                <li><a href="#">COMMUNITY2</a></li>
+                <li class="hasSub"><a href="#">COMMUNITY3</a>
+                  <i class="fas fa-angle-right"></i>
+                  <div class="sub_menu2">
+                    <ul>
+                      <li><a href="#">SUB3-1</a></li>
+                      <li><a href="#">SUB3-2</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">GALLERY</a>
+            <div class="sub_menu1">
+              <ul>
+                <li><a href="#">GALLERY SUB1</a></li>
+                <li><a href="#">GALLERY SUB2</a></li>
+                <li><a href="#">GALLERY SUB3</a></li>
+                <li><a href="#">GALLERY SUB4</a></li>
+                <li><a href="#">GALLERY SUB5</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">LOCATION</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+</body>
+</html>

@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#header {
+  width: 100%;
+  border-bottom: 1px solid #444;
+}
+#header .inner {
+  width: 1180px;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+}
+#header .inner .btncall {
+  display: block;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+#header .inner .btncall i {
+  font-size: 50px;
+  color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+  backface-visibility: hidden;
+}
+#header .inner .btncall i.close {
+  transform: rotateY(180deg);
+}
+#header .inner .btncall i.open {
+  transform: rotateY(0deg);
+}
+#header .inner .btncall.on .close {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+#header .inner .btncall.on .open {
+  opacity: 0;
+  transform: rotateY(180deg);
+}
+
+/*# sourceMappingURL=style.css.map */

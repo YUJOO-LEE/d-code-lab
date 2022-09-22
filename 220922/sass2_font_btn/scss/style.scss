@@ -1,0 +1,52 @@
+@charset 'utf-8';
+
+*{ margin: 0; padding: 0; }
+a{ text-decoration: none; color: inherit; }
+
+#header{
+  width: 100%;
+  border-bottom: 1px solid #444;
+
+  .inner{
+    width: 1180px;
+    height: 100px;
+    margin: 0 auto;
+    position: relative;
+
+    .btncall{
+      display: block;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      i{
+        font-size: 50px;
+        color: #000;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 0.5s;
+        backface-visibility: hidden;  // 요소를 뒷면으로 돌렸을때 안보이게
+
+        &.close{
+          transform: rotateY(180deg);
+        }
+        &.open{
+          transform: rotateY(0deg);
+        }
+      }
+      &.on{ // btncall에 함께 지정 시
+        .close{
+          opacity: 1;
+          transform: rotateY(0deg);
+        }
+        .open{
+          opacity: 0;
+          transform: rotateY(180deg);
+        }
+      }
+    }
+  }
+}

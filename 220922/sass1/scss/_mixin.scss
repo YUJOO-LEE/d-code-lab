@@ -1,0 +1,25 @@
+@mixin clear {  // 선언 시 mixin, 호출 시 include
+  &::after{ // & 상위 선택자로 치환
+    content: ''; display: block; clear: both;
+  }
+}
+
+@mixin button($fontSize:15px, $color:#fff, $wid:120px, $ht:30px, $corner:10px, $bgColor:orange, $hoverBg:darkorange) {
+  width: $wid;
+  height: $ht;
+  line-height: $ht;
+  font-size: $fontSize;
+  border-radius: $corner;
+  background-color: $bgColor;
+
+  display: block;
+  font-family: 'arial';
+  text-align: center;
+  color: $color;
+  transition: 0.3s;
+
+  &:hover{
+    background-color: $hoverBg;
+    transform: translateY(2px);
+  }
+}

@@ -1,0 +1,133 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  background: #eee;
+}
+body .wrap {
+  width: 100%;
+}
+body .wrap::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+body .wrap:hover .item {
+  opacity: 1;
+  transform: translateY(0);
+}
+body .wrap .item {
+  float: left;
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 5px 5px 20px #ddd;
+  margin: 40px;
+  padding: 40px 30px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 0.5s;
+  /*
+    버튼 재활용 하는 방법 
+    1. @mixin 사용
+    2. 최상단에 클래스 지정한 후 버튼마다 해당 클래스 지정
+      각 버튼 세부사항은 각 코드에서 덮어쓰기
+  */
+}
+body .wrap .item:nth-of-type(1) {
+  transition-delay: 0.1s;
+}
+body .wrap .item:nth-of-type(2) {
+  transition-delay: 0.2s;
+}
+body .wrap .item:nth-of-type(3) {
+  transition-delay: 0.3s;
+}
+body .wrap .item:nth-of-type(4) {
+  transition-delay: 0.4s;
+}
+body .wrap .item:nth-of-type(5) {
+  transition-delay: 0.5s;
+}
+body .wrap .item:nth-of-type(6) {
+  transition-delay: 0.6s;
+}
+body .wrap .item:nth-of-type(7) {
+  transition-delay: 0.7s;
+}
+body .wrap .item:nth-of-type(8) {
+  transition-delay: 0.8s;
+}
+body .wrap .item:nth-of-type(9) {
+  transition-delay: 0.9s;
+}
+body .wrap .item:nth-of-type(10) {
+  transition-delay: 1s;
+}
+body .wrap .item h2 {
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "arial";
+  color: #222;
+  margin-bottom: 20px;
+}
+body .wrap .item p {
+  font-size: 14px;
+  font-faminly: "arial";
+  color: #999;
+  margin-bottom: 20px;
+}
+body .wrap .item a {
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 15px;
+  border-radius: 10px;
+  background-color: orange;
+  display: block;
+  font-family: "arial";
+  text-align: center;
+  color: #fff;
+  transition: 0.3s;
+}
+body .wrap .item a:hover {
+  background-color: darkorange;
+  transform: translateY(2px);
+}
+
+section {
+  width: 1000px;
+  margin: 20px;
+  padding: 5px;
+  /*
+    floor(n) : 내림
+    ceil(n) : 올림
+    round(n) : 반올림
+  */
+}
+
+/*
+
+<nesting의 종류>
+
+1. 규칙 네스팅
+
+2. 속성 네스팅
+
+*/
+
+/*# sourceMappingURL=style.css.map */
