@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form 요소</title>
+</head>
+<body>
+  <!-- 
+    form 요소
+    - 사용자로부터 정보들을 입력 받을 수 있는 요소
+
+    action - 받은 정보를 처리할 페이지 주소
+
+    method - get/post
+      - 입력받은 데이터를 서버에 전달하는 방식
+      get : 주소에 데이터를 추가하여 서버에 전달
+      post : 데이터를 별도로 첨부하여 서버에 전달
+
+    <input type="text"> - 텍스트를 한 줄 입력
+    <input type="password"> - 비밀번호 입력 (text 입력이지만 * 표시 처리)
+    <input type="radio"> - 옵션 중 1개만 선택 가능
+    <input type="checkbox"> - 옵션 중 다중 선택 가능
+    <select></select> - 옵션이 드롭다운 리스트로 되어있고, 1개만 선택 가능
+    <textarea></textarea> - 장문의 텍스트 입력 (cols 칸 rows 줄)
+    <input type="reset"> -  초기화 버튼
+    <input type="submit"> - 전송 버튼 (action으로 데이터 제출)
+    
+   -->
+
+   <form action="result.html" method="get">
+    <!-- 
+      name="" <=> for="" 연결용
+      id="" - 서버에 labal과 inpt사이의 값, 데이터의 동류를 알 수 있게 하는 용도
+     -->
+      <label for="name">이름</label>
+      <input type="text" name="name" id="name">
+
+      <label for="pwd">비밀번호</label>
+      <input type="password" name="pwd" id="password">
+
+      <input type="radio" name="gender" id="male" value="male"><label for="male">남</label>
+      <input type="radio" name="gender" id="female" value="female"><label for="female">여</label>
+
+      <input type="checkbox" name="hobby" value="game" id="game"><label for="game">게임</label>
+      <input type="checkbox" name="hobby" value="reading" id="reading"><label for="reading">독서</label>
+      <input type="checkbox" name="hobby" value="sleeping" id="sleeping"><label for="sleeping">취침</label>
+
+      <select name="email" id="email">
+        <option value="naver">네이버</option>
+        <option value="google">구글</option>
+        <option value="daum">다음</option>
+      </select>
+
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+
+      <input type="reset" value="취소">
+      <input type="submit" value="제출">
+   </form>
+</body>
+</html>
