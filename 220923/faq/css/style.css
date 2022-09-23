@@ -50,7 +50,7 @@ body .container .tab input[type=radio]:checked + label::after {
   z-index: 5;
 }
 body .container .tab input[type=radio]:checked ~ .content {
-  max-height: 10vh;
+  max-height: 100vh;
 }
 body .container .tab input[type=radio]:checked ~ .content p {
   color: #fff;

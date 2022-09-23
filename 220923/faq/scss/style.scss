@@ -39,7 +39,7 @@ body{
         }
 
         &:checked ~ .content{
-          max-height: 10vh;
+          max-height: 100vh;
           p{
             color: #fff;
           }
