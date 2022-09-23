@@ -1,0 +1,188 @@
+@charset 'utf-8';
+@import 'reset.scss';
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@100&display=swap');
+
+// font-family: 'Alegreya Sans SC', sans-serif;
+
+main{
+  width: 100%; height: 100vh;
+  background-color: #333;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+  // 좌측 헤더
+  header{
+    width: 20%;
+    height: 100%;
+    padding: 10vh 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+
+    h1{
+      width: 100%;
+      font-size: 0; // 디자인용 reset
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      i{
+        font-size: 5vw;
+        margin-bottom: 15px;
+      }
+      span{
+        font: normal 1vw/1 'arial';
+      }
+    }
+    address{
+      font: normal 11px/1.2 'arial';
+      color: #888;
+    }
+  }
+
+  // 우상단 메뉴
+  nav{
+    position: absolute;
+    top: 10vh;
+    right: 5vw;
+    z-index: 3;
+
+    ul{
+      display: flex;
+      li{
+        a{
+          font-size: 18px;
+          color: #bbb;
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+
+  // 메인 내용
+  section{
+    width: 80%;
+    height: 100%;
+    padding-top: 15vh;  // nav만큼 띄워줌
+    display: flex;
+    position: relative;
+    z-index: 1;
+
+    article{
+      flex: 1;
+      padding: 70px 40px 100px;
+      position: relative;
+      opacity: 0.6;
+      transition: opacity 1s, flex 1s;
+      z-index: 1;
+      cursor: pointer;
+
+      &::before{  // hover 시 나올 배경 box 세팅
+        content: '';
+        display: block;
+        width: 80%;
+        height: 95%;
+        position: absolute;
+        top: 0;
+        left: -200px;
+        background-color: #444;
+        opacity: 0;
+        transition: 1s;
+      }
+
+      .inner{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+        position: relative;
+
+        // 상단 텍스트 부분
+        .txt{
+          width: 100%;
+          h2{
+            font: normal 2vw/1 'Alegreya Sans SC';
+            color: #fff;
+            margin-bottom: 40px;
+            padding-top: 70px;
+            transition: 1s;
+
+            &::after{
+              content: '';
+              display: block;
+              width: 40px;
+              height: 2px;
+              background-color: #777;
+              margin-top: 20px;
+              transition: 1s;
+            }
+          }
+          p{
+            font: 14px/1.4 'arial';
+            color: #999;
+          }
+        }
+
+        // 하단 비디오 부분
+        figure{
+          width: 100%;
+          height: 15vh;
+          overflow: hidden;
+          box-shadow: 5px 5px 30px rgba(0,0,0,0.3);
+          transition: 1s;
+          transform-origin: left center;
+          // 마우스 올렸을 때 커지는 왼쪽 기준점으로 해서 오른쪽으로 커지는 효과
+          filter: saturate(10%);
+          // 사이트 분위기에 맞춰 채도 낮춤 video가 아닌 box에 걸어줌
+
+          video{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      // article에 hover했을 때
+      &:hover{
+        flex: 1.5;
+        // hover시 hover상대만 박스넓이 넓게하기 (기존 설정 flex:1)
+        opacity: 1;
+        z-index: 2;
+
+        &::before{  // 배경 박스 출력
+          opacity: 1;
+          left: 0;
+        }
+
+        .inner{
+          .txt{
+            width: 75%;
+            h2{
+              // 기존에 주었던 padding 없애면서 font가 위로 늘어나는 것처럼 보이게
+              padding-top: 0;
+              font-size: 5vw;
+
+              &::after{
+                width: 120px;
+                background-color: orange;
+              }
+            }
+          }
+
+          figure{
+            height: 25vh;
+            transform: translateY(3vh); // 높이가 높아지고나서 보기좋게 살짝 내려줌
+            filter: saturate(100%); // 채도 낮춘거 기본값으로 되돌리기
+          }
+        }
+      }
+    }
+  }
+}
