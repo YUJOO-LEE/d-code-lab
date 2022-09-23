@@ -1,0 +1,42 @@
+@charset 'utf-8';
+
+/*
+
+  flex-grow
+  - 요소 안쪽 여백 늘리기
+  - 전체 부모영여기을 채우려고 늘어남
+  - 주지 않으면 원래 크기
+  - 자식들에게 같은값 1을 주면 골고루 부모요소를 채움
+  - 숫자가 달라질 수록 비율 나눠가짐
+  
+*/
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+main{ width: 100%; height: 100vh; }
+
+section{
+  width: 100%; background-color: lightgray;
+  display: flex;
+}
+
+section article{
+  background-color: lightblue;
+  border: 1px solid black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: black;
+}
+
+section article:nth-of-type(1){
+  flex-grow: 1;
+}
+section article:nth-of-type(2){
+  flex-grow: 1;
+}
+section article:nth-of-type(3){
+  flex-grow: 1;
+}

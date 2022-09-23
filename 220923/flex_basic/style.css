@@ -1,0 +1,74 @@
+@charset 'utf-8';
+
+*{ margin: 0; padding: 0; box-sizing: border-box; }
+
+/* 
+  flex : 부모 요소에 적용
+  
+  display : flex;
+  - 자신은 블록 속성, 자식요소는 flex 환경
+
+  display : inline-flex;
+  - 자신은 인라인 속성, 자식요소는 flex 환경
+
+  1-1. flex-direction : 자식 요소의 정렬 방향 (축)을 변경
+  - row : '기본값' 기본축이 가로로 정렬 (왼 -> 오)
+  - column : 기본축이 세로로 정렬 (위 -> 아래)
+  - row-reverse : 자식요소를 가로 역순으로 정렬 (오 -> 왼)
+  - column-reverse : 자식요소를 세로 역순으로 정렬 (아래 -> 위)
+
+  1-2. flex-wrap : 자식요소의 줄바꿈 적용 여부와 방향 설정
+  - nowrap : '기본값' 자식요소의 줄바꿈 불가.
+  - wrap : 줄바꿈 허용
+  - wrap-reverse : wrap이지만 역순
+
+  1-3. flex-flow : flex-direction, flex-wrap 같이 쓸때 사용
+  - 예) flex-flow : column nowrap;
+
+  2. justify-content : 중심축(main axis) 기준으로 정렬하는 방식
+  - flex-start : '기본값' flex-direction에서 설정한 중심축 시작되는 쪽에 정렬
+  - flex-end : 자식요소를 중심축 끝 쪽에 정렬 (순서변경X)
+  - center : 자식요소를 가운데 정렬
+  - space-between : 양 끝에 여백없이. 나머지는 같은 여백을 주고 균일하게 배치
+  - space-around : 모든 자식 요소에 같은 여백 지정 (사이 여백은 끝 여백의 2배)
+  - space-evenly : 모든 여백을 같게
+
+  3-1. align-items : 반대축(cross axis) 기준으로 정렬하는 방식
+  - flex-start : '기본값' 반대축 시작되는 쪽에 정렬
+  - flex-end : 반대축 끝나는 쪽에 정렬
+  - center : 반대축 기준으로 중앙 정렬
+  
+  3-2. align-content : 반대축 기준 정렬, space- 사용 가능
+
+
+  * 가운데 정렬 *
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+*/
+
+main{ width: 100%; height: 100vh; background-color: lightgray; }
+section{ 
+  width: 500px; height: 100%; border: 5px solid blue; 
+  display: flex;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+section article{
+  width: 100px; height: 100px;
+  background-color: lightblue;
+  border: 1px solid #000;
+  font-size: 50px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section article:nth-of-type(1){ order: 2; }
+section article:nth-of-type(2){ order: 3; }
+section article:nth-of-type(3){ order: 1; }
