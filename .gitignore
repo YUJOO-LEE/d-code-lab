@@ -1,7 +1,7 @@
 # Created by https://www.toptal.com/developers/gitignore/api/macos,visualstudiocode,jekyll,ruby,sass
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,visualstudiocode,jekyll,ruby,sass
 
-### Jekyll ###
+### Jekyll ### 
 _site/
 .sass-cache/
 .jekyll-cache/
