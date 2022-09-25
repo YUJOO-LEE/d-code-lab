@@ -2,27 +2,66 @@
 @import 'reset.scss';
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
-$font-size-logo: 1.5vw;
-$font-size-nav-pc: 16px;
-$font-size-nav-mobile: 14px;
+$font-size-big: max(28px, 3.5vw);
+// 여러개중에 큰 값 선택 (최소값 이하로 안떨어지게)
+$font-size-medium: max(20px, 2vw);
+$font-size-regular: max(14px, 1.3vw);
+$font-size-small: max(12px, 1vw);
+$i-size-1: 7vw;
 
 $color-black: #000;
 $color-white: #fff;
 $color-gray: #666;
+$color-light-gray: #999;
 $color-yellow: #ffcc00;
 $color-brown: #3c201a;
+
+@mixin viewDetail { // viewDetail 버튼
+  padding: max(10px, 1.2vw) max(25px, 3.5vw);
+  font-size: $font-size-regular;
+  text-align: center;
+  color: $color-white;
+  background-color: $color-black;
+  border-radius: 100px;
+  transition: 0.3s;
+
+  &:hover{
+    background-color: $color-gray;
+  }
+}
+
+@mixin logoBall { // logo 골프공 부분
+  color: $color-brown;
+  text-shadow: 5px 0 0 $color-yellow;
+  margin-right: 5px;
+}
 
 body{
   font-family: 'DM Sans', sans-serif;
   height: 100vh;
 
+  // [ header ]
   header{
     width: 100%;
+    height: 100px;
+    position: fixed;
+    z-index: 5;
+
+    &::before{
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: $color-black;
+      opacity: 0.5;
+    }
   
     .inner{
       width: 100%;
-      height: 100px;
-      background-color: $color-black;
+      height: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -33,15 +72,13 @@ body{
       // 로고 영역
       h1{
         color: $color-white;
-        font-weight: bold;
-        font-size: max($font-size-nav-mobile, $font-size-logo);
-        // 여러개중에 큰 값 선택 (최소값 이하로 안떨어지게)
+        font-size: $font-size-regular;
         white-space: nowrap;
         // 텍스트 줄바꿈 금지
         transition: 0.5s;
   
         i{
-          transform: translateY(0.2vw);
+          @include logoBall;
         }
       }
   
@@ -55,7 +92,7 @@ body{
             padding: 10px;
             color: $color-white;
             font-weight: 500;
-            font-size: $font-size-nav-pc;
+            font-size: $font-size-regular;
             white-space: nowrap;
           }
         }
@@ -146,7 +183,7 @@ body{
           a{
             display: block;
             padding: 10px;
-            font-size: $font-size-nav-mobile;
+            font-size: $font-size-regular;
             font-weight: 500;
           }
         }
@@ -171,14 +208,555 @@ body{
       }
     }
   }
+
+  // [ main ]
+  main{
+    // 비주얼 영역
+    .visual{
+      width: 100%;
+      height: 100vh;
+      position: relative;
+
+      .inner{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+
+        .video{
+          width: 100%;
+          height: 100%;
+
+          video{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        h1{
+          position: absolute;
+          width: 100%;
+          top: 50%;
+          transform: translateY(-50%);
+          padding: 0 30px;
+          font-size: $font-size-big;
+          text-align: center;
+          color: $color-white;
+        }
+
+        p{
+          position: absolute;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          font-size: $font-size-regular;
+          color: $color-white;
+
+          span{
+            margin-bottom: 20px;
+          }
+
+          i{
+            animation: scrollArrow 0.5s linear infinite alternate;
+          }
+        }
+      }
+    }
+
+    // 배너 영역
+    .banner{
+      width: 100%;
+      position: relative;
+      background-color: $color-white;
+
+      .inner{
+        width: 1180px;
+        margin: 0 auto;
+        padding: 100px 30px;
+
+        h1{
+          font-size: $font-size-big;
+          text-align: center;
+          margin-bottom: 20px;
+          i{
+            @include logoBall;
+            text-shadow: 10px 0 0 $color-yellow;
+            margin-right: 10px;
+          }
+        }
+
+        p{
+          font-size: $font-size-regular;
+          text-align: center;
+          color: $color-gray;
+        }
+      }
+    }
+
+    // 인테리어 영역
+    .interior{
+      width: 100%;
+      height: 100vh;
+      position: relative;
+      background-color: $color-black;
+      
+      &::before{
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url(../img/interior.jpg) no-repeat center/cover;
+        opacity: 0.5;
+      }
+
+      .inner{
+        width: 1180px;
+        height: 100%;
+        padding: 50px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        h1{
+          font-size: $font-size-big;
+          color: $color-white;
+          margin-bottom: 30px;
+        }
+
+        .viewDetail{
+          @include viewDetail;
+          background-color: transparent;
+          border: 1px solid $color-white;
+
+          &:hover{
+            background-color: $color-white;
+            color: $color-black;
+          }
+        }
+      }
+    }
+
+    // 시스템 영역
+    .system{
+      width: 100%;
+      height: 100vh;
+      position: relative;
+      background-color: $color-white;
+
+      .inner{
+        width: 1180px;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h1{
+          font-size: $font-size-big;
+          text-align: center;
+          margin-bottom: 50px;
+
+          span{
+            display: block;
+            font-size: $font-size-regular;
+          }
+        }
+
+        .wrap{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 30px;
+          position: relative;
+
+          div{
+            p{
+              i{
+                display: block;
+                width: 15vw;
+                height: 15vw;
+                margin: 0 auto;
+                border-radius: 50%;
+                font-size: $i-size-1;
+                color: $color-white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $color-yellow;
+              }
+
+              span{
+                display: block;
+                text-align: center;
+                font-size: $font-size-regular;
+                font-weight: bold;
+                padding: 2vh 0;
+              }
+            }
+
+            &.owner p i{ background-color: $color-gray; }
+            &.shop p i{ background-color: $color-brown; }
+
+            &.arrowRight{
+              text-align: center;
+              padding: 0 30px 10px 10px;
+              margin: 0 30px 50px 20px;
+              position: relative;
+  
+              &::before{  // 바닥줄
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 1px;
+                background-color: $color-gray;
+              }
+
+              &::after{ // 오른쪽줄
+                content: '';
+                display: block;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 25px;
+                height: 1px;
+                background-color: $color-gray;
+                transform-origin: right bottom;
+                transform: rotate(45deg);
+              }
+            }
+            
+            &.arrowLeft{
+              text-align: center;
+              padding: 0 15px 10px 35px;
+              margin: 0 20px 50px 30px;
+              position: relative;
+  
+              &::before{
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 1px;
+                background-color: $color-gray;
+              }
+              &::after{
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 25px;
+                height: 1px;
+                background-color: $color-gray;
+                transform-origin: left bottom;
+                transform: rotate(-45deg);
+              }
+            }
+          }
+        }
+        
+
+        .viewDetail{
+          @include viewDetail;
+        }
+      }
+    }
+
+    // 어플 스크린샷 영역
+    .app{
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+      background-color: #eee;
+
+      .inner{
+        width: 1180px;
+        margin: 0 auto;
+        padding: 150px 30px 150px 50px;
+        display: flex;
+        justify-content: space-between;
+
+        .txt{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+
+          h1{
+            font-size: $font-size-big;
+            margin-bottom: 50px;
+          }
+
+          .viewDetail{
+            @include viewDetail;
+          }
+        }
+
+        .slide{
+          width: 728px;
+          overflow: hidden;
+
+          .wrap{
+            width: 100%;
+  
+            ul{
+              width: 100%;
+              max-height: 60vh;
+              transition: 0.3s;
+              transform: translateX(0);
+              display: flex;
+  
+              li{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                img{
+                  width: 728px;
+                  height: 100%;
+                  object-fit: contain;
+                }
+              }
+
+              &.on{
+                transform: translateX(-100%);
+              }
+            }
+          }
+
+          .btn{
+            display: flex;
+            justify-content: center;
+
+            .slideBtn{
+              width: 15px;
+              height: 15px;
+              margin: 5px;
+              background-color: $color-light-gray;
+              border-radius: 50%;
+              text-indent: -999999px;
+
+              &.on{
+                background-color: $color-black;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 가맹 상담 영역
+    .contact{
+      width: 100%;
+      position: relative;
+      background-color: $color-white;
+
+      .inner{
+        width: 1180px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 150px 50px;
+
+        h1{
+          font-size: $font-size-big;
+          margin-bottom: 30px;
+        }
+
+        .viewDetail{
+          @include viewDetail;
+          margin-bottom: 50px;
+        }
+
+        .tabMenu{
+          width: 100%;
+          margin-bottom: 50px;
+
+          ul{
+            display: flex;
+            li{
+              flex: 1;
+
+              a{
+                display: block;
+                padding: 20px 0;
+                font-size: $font-size-regular;
+                text-align: center;
+                color: $color-light-gray;
+                font-weight: 500;
+                border-top: 2px solid $color-light-gray;
+
+                &.on{
+                  border-top: 2px solid $color-black;
+                  color: $color-black;
+                }
+              }
+            }
+          }
+        }
+
+        .tabBody{
+          width: 100%;
+
+          >div{
+            display: none;
+
+            h2{
+              font-size: $font-size-medium;
+              margin-bottom: 10px;
+            }
+            p{
+              font-size: $font-size-regular;
+              margin-bottom: 30px;
+              color: $color-gray;
+            }
+
+            &.on{
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // [ footer ]
+  footer{
+    width: 100%;
+    position: relative;
+    background-color: #eee;
+
+    .inner{
+      width: 1180px;
+      margin: 0 auto;
+      padding: 80px 50px;
+
+      h1{
+        color: $color-gray;
+        margin-bottom: 20px;
+        i{
+          @include logoBall;
+        }
+      }
+      
+      ul{
+        display: flex;
+
+        li{
+          padding-right: 10px;
+          margin-right: 10px;
+          border-right: 1px solid $color-gray;
+          line-height: 1;
+
+          a{
+            font-size: $font-size-small;
+            color: $color-gray;
+          }
+
+          &:last-of-type{
+            border-right: 0;
+
+            a{
+              font-weight: bold;
+            }
+          }
+        }
+
+        &.terms{
+          margin-bottom: 20px;
+        }
+      }
+
+      address{
+        font-style: normal;
+
+        ul{
+          li{
+            font-size: $font-size-small;
+            line-height: 1.5;
+            color: $color-gray;
+          }
+        }
+        p{
+          font-size: $font-size-small;
+          line-height: 1.5;
+          color: $color-gray;
+        }
+      }
+    }
+  }
 }
 
+@keyframes scrollArrow {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+// 태블릿
+@media screen and (max-width: 1180px){
+  body{
+    main{
+      .banner{
+        .inner{ width: 100%; }
+      }
+      .interior{
+        .inner{ width: 100%; }
+      }
+      .system{
+        .inner{ width: 100%; }
+      }
+      .app{
+        .inner{
+          width: 100%;
+          .slide{
+            width: 560px;
+            .wrap ul li img{
+              width: 560px;
+            }
+          }
+        }
+      }
+      .contact{
+        .inner{ width: 100%; }
+      }
+    }
+    footer{
+      .inner{ width: 100%; }
+    }
+  }
+}
+
+// 모바일
 @media screen and (max-width: 960px) {
   body{
+    // [header]
     header{
-      .inner{
-        height: 60px;
+      height: 60px;
 
+      .inner{
         // 로고
         h1{
           position: absolute;
@@ -215,6 +793,142 @@ body{
       .mobileNav{
         &.on{
           transform: translateY(0);
+        }
+      }
+    }
+
+    // [main]
+    main{
+      // 배너 영역
+      .banner{
+        .inner{
+          padding: 80px 20px;
+        }
+      }
+
+      // 인테리어 영역
+      .interior{
+        height: 80vh;
+
+        .inner{
+          padding: 80px 20px;
+        }
+      }
+
+      // 시스템 영역
+      .system{
+        height: auto;
+        
+        .inner{
+          padding: 80px 0;
+
+          .wrap{
+            flex-wrap: wrap;
+            div{
+              order: 2;
+
+              &.owner{
+                margin-right: 100px;
+              }
+              &.shop{
+                order: 1;
+                width: 100%;
+              }
+              &.arrowRight{
+                position: absolute;
+                transform: translateX(-80%);
+                font-size: $font-size-small;
+                padding-left: 0;
+
+                &::before{
+                  width: 30%;
+                  left: unset;
+                  bottom: 80%;
+                  right: 0;
+                  transform-origin: right center;
+                  transform: rotate(-45deg);
+                }
+                &::after{
+                  width: 10%;
+                  left: unset;
+                  bottom: 80%;
+                  right: 0;
+                  transform-origin: right center;
+                  transform: rotate(0);
+                }
+              }
+              &.arrowLeft{
+                position: absolute;
+                transform: translateX(80%);
+                font-size: $font-size-small;
+                padding-right: 0;
+
+                &::before{
+                  width: 30%;
+                  right: unset;
+                  bottom: 80%;
+                  left: 0;
+                  transform-origin: left center;
+                  transform: rotate(45deg);
+                }
+                &::after{
+                  width: 10%;
+                  right: unset;
+                  bottom: 80%;
+                  left: 0;
+                  transform-origin: left center;
+                  transform: rotate(0);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // 어플 스크린샷 영역
+      .app{
+        .inner{
+          padding: 80px 20px;
+          flex-direction: column;
+          align-items: center;
+
+          .txt{
+            text-align: center;
+            align-items: center;
+            h1{ margin-bottom: 30px; }
+            a{ margin-bottom: 30px; }
+          }
+          .slide{
+            width: 280px;
+            .wrap ul{
+              height: 50vh;
+              li img{ width: 280px; }
+            }
+          }
+        }
+      }
+
+      // 가맹 상담 영역
+      .contact{
+        .inner{
+          padding: 80px 20px;
+        }
+      }
+    }
+
+    // [footer]
+    footer{
+      .inner{
+        padding: 50px 20px;
+
+        address{
+          ul{
+            display: block;
+            margin-bottom: 5px;
+            li{
+              border: 0;
+            }
+          }
         }
       }
     }
