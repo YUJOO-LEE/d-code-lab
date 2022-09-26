@@ -36,18 +36,18 @@ body header::before {
   opacity: 0.5;
 }
 body header .inner {
-  width: 100%;
+  width: 1180px;
   height: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  padding: 0 30px;
   overflow: hidden;
 }
 body header .inner h1 {
   color: #fff;
-  font-size: max(14px, 1.3vw);
+  font-size: max(14px, 1vw);
   white-space: nowrap;
   transition: 0.5s;
 }
@@ -67,7 +67,7 @@ body header .inner > ul li a {
   padding: 10px;
   color: #fff;
   font-weight: 500;
-  font-size: max(14px, 1.3vw);
+  font-size: max(14px, 1vw);
   white-space: nowrap;
 }
 body header .inner > ul#gnb li {
@@ -142,7 +142,7 @@ body header .mobileNav ul:nth-of-type(1) {
 body header .mobileNav ul:nth-of-type(1) li a {
   display: block;
   padding: 10px;
-  font-size: max(14px, 1.3vw);
+  font-size: max(14px, 1vw);
   font-weight: 500;
 }
 body header .mobileNav ul:nth-of-type(2) {
@@ -159,38 +159,38 @@ body header .mobileNav ul:nth-of-type(2) li a {
 body header .mobileNav ul:nth-of-type(2) li:last-of-type a {
   border-left: 1px solid #666;
 }
-body main .visual {
+body .visual {
   width: 100%;
   height: 100vh;
   position: relative;
 }
-body main .visual .inner {
+body .visual .inner {
   width: 100%;
   height: 100%;
   position: fixed;
   left: 0;
   top: 0;
 }
-body main .visual .inner .video {
+body .visual .inner .video {
   width: 100%;
   height: 100%;
 }
-body main .visual .inner .video video {
+body .visual .inner .video video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-body main .visual .inner h1 {
+body .visual .inner h1 {
   position: absolute;
   width: 100%;
   top: 50%;
   transform: translateY(-50%);
   padding: 0 30px;
-  font-size: max(28px, 3.5vw);
+  font-size: max(28px, 3vw);
   text-align: center;
   color: #fff;
 }
-body main .visual .inner p {
+body .visual .inner p {
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -198,49 +198,49 @@ body main .visual .inner p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: max(14px, 1.3vw);
+  font-size: max(14px, 1vw);
   color: #fff;
 }
-body main .visual .inner p span {
+body .visual .inner p span {
   margin-bottom: 20px;
 }
-body main .visual .inner p i {
+body .visual .inner p i {
   animation: scrollArrow 0.5s linear infinite alternate;
 }
-body main .banner {
+body .banner {
   width: 100%;
   position: relative;
   background-color: #fff;
 }
-body main .banner .inner {
+body .banner .inner {
   width: 1180px;
   margin: 0 auto;
   padding: 100px 30px;
 }
-body main .banner .inner h1 {
-  font-size: max(28px, 3.5vw);
+body .banner .inner h1 {
+  font-size: max(28px, 3vw);
   text-align: center;
   margin-bottom: 20px;
 }
-body main .banner .inner h1 i {
+body .banner .inner h1 i {
   color: #3c201a;
   text-shadow: 5px 0 0 #ffcc00;
   margin-right: 5px;
   text-shadow: 10px 0 0 #ffcc00;
   margin-right: 10px;
 }
-body main .banner .inner p {
-  font-size: max(14px, 1.3vw);
+body .banner .inner p {
+  font-size: max(14px, 1vw);
   text-align: center;
   color: #666;
 }
-body main .interior {
+body .interior {
   width: 100%;
   height: 100vh;
   position: relative;
   background-color: #000;
 }
-body main .interior::before {
+body .interior::before {
   content: "";
   display: block;
   width: 100%;
@@ -251,7 +251,7 @@ body main .interior::before {
   background: url(../img/interior.jpg) no-repeat center/cover;
   opacity: 0.5;
 }
-body main .interior .inner {
+body .interior .inner {
   width: 1180px;
   height: 100%;
   padding: 50px;
@@ -263,14 +263,14 @@ body main .interior .inner {
   justify-content: center;
   align-items: flex-start;
 }
-body main .interior .inner h1 {
-  font-size: max(28px, 3.5vw);
+body .interior .inner h1 {
+  font-size: max(28px, 3vw);
   color: #fff;
   margin-bottom: 30px;
 }
-body main .interior .inner .viewDetail {
+body .interior .inner .viewDetail {
   padding: max(10px, 1.2vw) max(25px, 3.5vw);
-  font-size: max(14px, 1.3vw);
+  font-size: max(14px, 1vw);
   text-align: center;
   color: #fff;
   background-color: #000;
@@ -279,20 +279,20 @@ body main .interior .inner .viewDetail {
   background-color: transparent;
   border: 1px solid #fff;
 }
-body main .interior .inner .viewDetail:hover {
+body .interior .inner .viewDetail:hover {
   background-color: #666;
 }
-body main .interior .inner .viewDetail:hover {
+body .interior .inner .viewDetail:hover {
   background-color: #fff;
   color: #000;
 }
-body main .system {
+body .system {
   width: 100%;
   height: 100vh;
   position: relative;
   background-color: #fff;
 }
-body main .system .inner {
+body .system .inner {
   width: 1180px;
   height: 100%;
   margin: 0 auto;
@@ -301,23 +301,23 @@ body main .system .inner {
   align-items: center;
   justify-content: center;
 }
-body main .system .inner h1 {
-  font-size: max(28px, 3.5vw);
+body .system .inner h1 {
+  font-size: max(28px, 3vw);
   text-align: center;
   margin-bottom: 50px;
 }
-body main .system .inner h1 span {
+body .system .inner h1 span {
   display: block;
-  font-size: max(14px, 1.3vw);
+  font-size: max(14px, 1vw);
 }
-body main .system .inner .wrap {
+body .system .inner .wrap {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
   position: relative;
 }
-body main .system .inner .wrap div p i {
+body .system .inner .wrap div p i {
   display: block;
   width: 15vw;
   height: 15vw;
@@ -330,26 +330,26 @@ body main .system .inner .wrap div p i {
   align-items: center;
   background-color: #ffcc00;
 }
-body main .system .inner .wrap div p span {
+body .system .inner .wrap div p span {
   display: block;
   text-align: center;
-  font-size: max(14px, 1.3vw);
+  font-size: max(14px, 1vw);
   font-weight: bold;
   padding: 2vh 0;
 }
-body main .system .inner .wrap div.owner p i {
+body .system .inner .wrap div.owner p i {
   background-color: #666;
 }
-body main .system .inner .wrap div.shop p i {
+body .system .inner .wrap div.shop p i {
   background-color: #3c201a;
 }
-body main .system .inner .wrap div.arrowRight {
+body .system .inner .wrap div.arrowRight {
   text-align: center;
   padding: 0 30px 10px 10px;
   margin: 0 30px 50px 20px;
   position: relative;
 }
-body main .system .inner .wrap div.arrowRight::before {
+body .system .inner .wrap div.arrowRight::before {
   content: "";
   display: block;
   position: absolute;
@@ -359,7 +359,7 @@ body main .system .inner .wrap div.arrowRight::before {
   height: 1px;
   background-color: #666;
 }
-body main .system .inner .wrap div.arrowRight::after {
+body .system .inner .wrap div.arrowRight::after {
   content: "";
   display: block;
   position: absolute;
@@ -371,13 +371,13 @@ body main .system .inner .wrap div.arrowRight::after {
   transform-origin: right bottom;
   transform: rotate(45deg);
 }
-body main .system .inner .wrap div.arrowLeft {
+body .system .inner .wrap div.arrowLeft {
   text-align: center;
   padding: 0 15px 10px 35px;
   margin: 0 20px 50px 30px;
   position: relative;
 }
-body main .system .inner .wrap div.arrowLeft::before {
+body .system .inner .wrap div.arrowLeft::before {
   content: "";
   display: block;
   position: absolute;
@@ -387,7 +387,7 @@ body main .system .inner .wrap div.arrowLeft::before {
   height: 1px;
   background-color: #666;
 }
-body main .system .inner .wrap div.arrowLeft::after {
+body .system .inner .wrap div.arrowLeft::after {
   content: "";
   display: block;
   position: absolute;
@@ -399,85 +399,85 @@ body main .system .inner .wrap div.arrowLeft::after {
   transform-origin: left bottom;
   transform: rotate(-45deg);
 }
-body main .system .inner .viewDetail {
+body .system .inner .viewDetail {
   padding: max(10px, 1.2vw) max(25px, 3.5vw);
-  font-size: max(14px, 1.3vw);
+  font-size: max(14px, 1vw);
   text-align: center;
   color: #fff;
   background-color: #000;
   border-radius: 100px;
   transition: 0.3s;
 }
-body main .system .inner .viewDetail:hover {
+body .system .inner .viewDetail:hover {
   background-color: #666;
 }
-body main .app {
+body .app {
   width: 100%;
   min-height: 100vh;
   position: relative;
   background-color: #eee;
 }
-body main .app .inner {
+body .app .inner {
   width: 1180px;
   margin: 0 auto;
   padding: 150px 30px 150px 50px;
   display: flex;
   justify-content: space-between;
 }
-body main .app .inner .txt {
+body .app .inner .txt {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 }
-body main .app .inner .txt h1 {
-  font-size: max(28px, 3.5vw);
+body .app .inner .txt h1 {
+  font-size: max(28px, 3vw);
   margin-bottom: 50px;
 }
-body main .app .inner .txt .viewDetail {
+body .app .inner .txt .viewDetail {
   padding: max(10px, 1.2vw) max(25px, 3.5vw);
-  font-size: max(14px, 1.3vw);
+  font-size: max(14px, 1vw);
   text-align: center;
   color: #fff;
   background-color: #000;
   border-radius: 100px;
   transition: 0.3s;
 }
-body main .app .inner .txt .viewDetail:hover {
+body .app .inner .txt .viewDetail:hover {
   background-color: #666;
 }
-body main .app .inner .slide {
+body .app .inner .slide {
   width: 728px;
   overflow: hidden;
 }
-body main .app .inner .slide .wrap {
+body .app .inner .slide .wrap {
   width: 100%;
 }
-body main .app .inner .slide .wrap ul {
+body .app .inner .slide .wrap ul {
   width: 100%;
   max-height: 60vh;
   transition: 0.3s;
   transform: translateX(0);
   display: flex;
 }
-body main .app .inner .slide .wrap ul li {
+body .app .inner .slide .wrap ul li {
   width: 100%;
   display: flex;
   justify-content: center;
 }
-body main .app .inner .slide .wrap ul li img {
+body .app .inner .slide .wrap ul li img {
   width: 728px;
   height: 100%;
   object-fit: contain;
 }
-body main .app .inner .slide .wrap ul.on {
+body .app .inner .slide .wrap ul.on {
   transform: translateX(-100%);
 }
-body main .app .inner .slide .btn {
+body .app .inner .slide .btn {
   display: flex;
   justify-content: center;
 }
-body main .app .inner .slide .btn .slideBtn {
+body .app .inner .slide .btn .slideBtn {
   width: 15px;
   height: 15px;
   margin: 5px;
@@ -485,15 +485,15 @@ body main .app .inner .slide .btn .slideBtn {
   border-radius: 50%;
   text-indent: -999999px;
 }
-body main .app .inner .slide .btn .slideBtn.on {
+body .app .inner .slide .btn .slideBtn.on {
   background-color: #000;
 }
-body main .contact {
+body .contact {
   width: 100%;
   position: relative;
   background-color: #fff;
 }
-body main .contact .inner {
+body .contact .inner {
   width: 1180px;
   margin: 0 auto;
   display: flex;
@@ -501,13 +501,13 @@ body main .contact .inner {
   align-items: center;
   padding: 150px 50px;
 }
-body main .contact .inner h1 {
-  font-size: max(28px, 3.5vw);
+body .contact .inner h1 {
+  font-size: max(28px, 3vw);
   margin-bottom: 30px;
 }
-body main .contact .inner .viewDetail {
+body .contact .inner .viewDetail {
   padding: max(10px, 1.2vw) max(25px, 3.5vw);
-  font-size: max(14px, 1.3vw);
+  font-size: max(14px, 1vw);
   text-align: center;
   color: #fff;
   background-color: #000;
@@ -515,48 +515,48 @@ body main .contact .inner .viewDetail {
   transition: 0.3s;
   margin-bottom: 50px;
 }
-body main .contact .inner .viewDetail:hover {
+body .contact .inner .viewDetail:hover {
   background-color: #666;
 }
-body main .contact .inner .tabMenu {
+body .contact .inner .tabMenu {
   width: 100%;
   margin-bottom: 50px;
 }
-body main .contact .inner .tabMenu ul {
+body .contact .inner .tabMenu ul {
   display: flex;
 }
-body main .contact .inner .tabMenu ul li {
+body .contact .inner .tabMenu ul li {
   flex: 1;
 }
-body main .contact .inner .tabMenu ul li a {
+body .contact .inner .tabMenu ul li a {
   display: block;
   padding: 20px 0;
-  font-size: max(14px, 1.3vw);
+  font-size: max(14px, 1vw);
   text-align: center;
   color: #999;
   font-weight: 500;
   border-top: 2px solid #999;
 }
-body main .contact .inner .tabMenu ul li a.on {
+body .contact .inner .tabMenu ul li a.on {
   border-top: 2px solid #000;
   color: #000;
 }
-body main .contact .inner .tabBody {
+body .contact .inner .tabBody {
   width: 100%;
 }
-body main .contact .inner .tabBody > div {
+body .contact .inner .tabBody > div {
   display: none;
 }
-body main .contact .inner .tabBody > div h2 {
-  font-size: max(20px, 2vw);
+body .contact .inner .tabBody > div h2 {
+  font-size: max(20px, 1.5vw);
   margin-bottom: 10px;
 }
-body main .contact .inner .tabBody > div p {
-  font-size: max(14px, 1.3vw);
+body .contact .inner .tabBody > div p {
+  font-size: max(14px, 1vw);
   margin-bottom: 30px;
   color: #666;
 }
-body main .contact .inner .tabBody > div.on {
+body .contact .inner .tabBody > div.on {
   display: block;
 }
 body footer {
@@ -588,7 +588,7 @@ body footer .inner ul li {
   line-height: 1;
 }
 body footer .inner ul li a {
-  font-size: max(12px, 1vw);
+  font-size: max(12px, 0.8vw);
   color: #666;
 }
 body footer .inner ul li:last-of-type {
@@ -604,12 +604,12 @@ body footer .inner address {
   font-style: normal;
 }
 body footer .inner address ul li {
-  font-size: max(12px, 1vw);
+  font-size: max(12px, 0.8vw);
   line-height: 1.5;
   color: #666;
 }
 body footer .inner address p {
-  font-size: max(12px, 1vw);
+  font-size: max(12px, 0.8vw);
   line-height: 1.5;
   color: #666;
 }
@@ -623,25 +623,28 @@ body footer .inner address p {
   }
 }
 @media screen and (max-width: 1180px) {
-  body main .banner .inner {
+  body header .inner {
     width: 100%;
   }
-  body main .interior .inner {
+  body .banner .inner {
     width: 100%;
   }
-  body main .system .inner {
+  body .interior .inner {
     width: 100%;
   }
-  body main .app .inner {
+  body .system .inner {
     width: 100%;
   }
-  body main .app .inner .slide {
+  body .app .inner {
+    width: 100%;
+  }
+  body .app .inner .slide {
     width: 560px;
   }
-  body main .app .inner .slide .wrap ul li img {
+  body .app .inner .slide .wrap ul li img {
     width: 560px;
   }
-  body main .contact .inner {
+  body .contact .inner {
     width: 100%;
   }
   body footer .inner {
@@ -651,6 +654,9 @@ body footer .inner address p {
 @media screen and (max-width: 960px) {
   body header {
     height: 60px;
+  }
+  body header .inner {
+    padding: 0 20px;
   }
   body header .inner h1 {
     position: absolute;
@@ -686,41 +692,41 @@ body footer .inner address p {
   body header .mobileNav.on {
     transform: translateY(0);
   }
-  body main .banner .inner {
+  body .banner .inner {
     padding: 80px 20px;
   }
-  body main .interior {
+  body .interior {
     height: 80vh;
   }
-  body main .interior .inner {
+  body .interior .inner {
     padding: 80px 20px;
   }
-  body main .system {
+  body .system {
     height: auto;
   }
-  body main .system .inner {
+  body .system .inner {
     padding: 80px 0;
   }
-  body main .system .inner .wrap {
+  body .system .inner .wrap {
     flex-wrap: wrap;
   }
-  body main .system .inner .wrap div {
+  body .system .inner .wrap div {
     order: 2;
   }
-  body main .system .inner .wrap div.owner {
+  body .system .inner .wrap div.owner {
     margin-right: 100px;
   }
-  body main .system .inner .wrap div.shop {
+  body .system .inner .wrap div.shop {
     order: 1;
     width: 100%;
   }
-  body main .system .inner .wrap div.arrowRight {
+  body .system .inner .wrap div.arrowRight {
     position: absolute;
     transform: translateX(-80%);
-    font-size: max(12px, 1vw);
+    font-size: max(12px, 0.8vw);
     padding-left: 0;
   }
-  body main .system .inner .wrap div.arrowRight::before {
+  body .system .inner .wrap div.arrowRight::before {
     width: 30%;
     left: unset;
     bottom: 80%;
@@ -728,7 +734,7 @@ body footer .inner address p {
     transform-origin: right center;
     transform: rotate(-45deg);
   }
-  body main .system .inner .wrap div.arrowRight::after {
+  body .system .inner .wrap div.arrowRight::after {
     width: 10%;
     left: unset;
     bottom: 80%;
@@ -736,13 +742,13 @@ body footer .inner address p {
     transform-origin: right center;
     transform: rotate(0);
   }
-  body main .system .inner .wrap div.arrowLeft {
+  body .system .inner .wrap div.arrowLeft {
     position: absolute;
     transform: translateX(80%);
-    font-size: max(12px, 1vw);
+    font-size: max(12px, 0.8vw);
     padding-right: 0;
   }
-  body main .system .inner .wrap div.arrowLeft::before {
+  body .system .inner .wrap div.arrowLeft::before {
     width: 30%;
     right: unset;
     bottom: 80%;
@@ -750,7 +756,7 @@ body footer .inner address p {
     transform-origin: left center;
     transform: rotate(45deg);
   }
-  body main .system .inner .wrap div.arrowLeft::after {
+  body .system .inner .wrap div.arrowLeft::after {
     width: 10%;
     right: unset;
     bottom: 80%;
@@ -758,31 +764,31 @@ body footer .inner address p {
     transform-origin: left center;
     transform: rotate(0);
   }
-  body main .app .inner {
+  body .app .inner {
     padding: 80px 20px;
     flex-direction: column;
     align-items: center;
   }
-  body main .app .inner .txt {
+  body .app .inner .txt {
     text-align: center;
     align-items: center;
   }
-  body main .app .inner .txt h1 {
+  body .app .inner .txt h1 {
     margin-bottom: 30px;
   }
-  body main .app .inner .txt a {
+  body .app .inner .txt a {
     margin-bottom: 30px;
   }
-  body main .app .inner .slide {
+  body .app .inner .slide {
     width: 280px;
   }
-  body main .app .inner .slide .wrap ul {
+  body .app .inner .slide .wrap ul {
     height: 50vh;
   }
-  body main .app .inner .slide .wrap ul li img {
+  body .app .inner .slide .wrap ul li img {
     width: 280px;
   }
-  body main .contact .inner {
+  body .contact .inner {
     padding: 80px 20px;
   }
   body footer .inner {
