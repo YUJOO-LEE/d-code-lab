@@ -13,3 +13,6 @@ if (now >= 0 && now < 13) {
 if (now >= 13 && now < 16) {
   main.style.backgroundColor = 'pink';
 }
+if (now >= 16 && now < 24) {
+  main.style.backgroundColor = 'lightgreen';
+}
