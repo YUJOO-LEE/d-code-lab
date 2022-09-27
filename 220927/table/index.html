@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>table</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 
+
+    셀 병합
+    1. 가로 칸을 합칠 때는 합쳐지는 칸을 삭제한 후 시작칸에 colspan = '합쳐지는 칸 수'
+    2. 세로 칸을 합칠 때는 합쳐지는 칸을 삭제한 후 시작칸에 rowspan = '합쳐지는 칸 수'
+
+   -->
+  <table class="tableA" border="1">
+    <tr>
+      <th>제목 1</th>
+      <th>제목 2</th>
+      <th>제목 3</th>
+      <th>제목 4</th>
+      <th>제목 5</th>
+    </tr>
+    <tr>
+      <td colspan="2">1,2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td rowspan="2">6, 11</td>
+      <td>7</td>
+      <td>8</td>
+      <td colspan="2" rowspan="2">9, 10, 14, 15</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>17</td>
+      <td>18</td>
+      <td>19</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>22</td>
+      <td>23</td>
+      <td>24</td>
+      <td>25</td>
+    </tr>
+  </table>
+
+  <!-- 
+
+    thead - 테이블의 행 그룹 중 제목 셀 그룹. 테이블에 한번만 사용
+    
+    tbody - 본문
+
+    tfoot - 레코드 내용의 소계, 합계 등 정보에 해당하는 푸터, 한번만 사용
+
+   -->
+  <table class="tableB" border="1">
+    <caption class="hidden">A반의 시험 성적표</caption>
+    <thead>
+      <tr>
+        <th>국어</th>
+        <th>수학</th>
+        <th>과학</th>
+        <th>영어</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>70</td>
+          <td>88</td>
+          <td>76</td>
+          <td>64</td>
+        </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>70</td>
+        <td>88</td>
+        <td>76</td>
+        <td>64</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <!--
+    scope
+    - 제목셀과 내용셀의 관계 지정
+    - 데이터의 의미와 관계를 파악하기 쉽게 해줌
+    - th에 scope속성을 지정하고 방향에 따라 col, row를 지정
+  -->
+  <table border="1">
+    <caption class="hidden">회원정보</caption>
+    <tr>
+      <th scope="row">이름</th>
+      <td>홍길동</td>
+    </tr>
+    <tr>
+      <th scope="row">성별</th>
+      <td>남자</td>
+    </tr>
+    <tr>
+      <th scope="row">나이</th>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th scope="row">주소</th>
+      <td>서울시 영등포구</td>
+    </tr>
+  </table>
+
+  <table border="1">
+    <caption class="hidden">당월 결제 금액</caption>
+    <thead>
+      <tr>
+        <th colspan="5" id="title">당월 결제하실 금액</th>
+      </tr>
+      <tr>
+        <th id="no">회차</th>
+        <th id="a">원금</th>
+        <th id="b">혜택금액</th>
+        <th id="c">환율</th>
+        <th id="d">수수료</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td headers="title no">1</td>
+        <td headers="title a">100</td>
+        <td headers="title b">200</td>
+        <td headers="title c">300</td>
+        <td headers="title d">400</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

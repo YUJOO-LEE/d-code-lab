@@ -146,6 +146,20 @@
 
   .inner{
     width: 1180px; margin: 0 auto; min-height: 500px;
+
+    h1{
+      font: normal 50px/1 'arial'; color: #000; margin-bottom: 60px;
+
+      span{
+        font: normal 20px/1 '맑은 고딕'; color: #aaa;
+
+        &::before{
+          content: '/';
+          font: normal 20px/1 '맑은 고딕';
+          margin-left: 20px; margin-right: 10px;
+        }
+      }
+    }
   }
 }
 
@@ -203,7 +217,13 @@
     }
   }
 
-  
+  // [content]
+  .content{
+    padding: 0 0 100px;
+    .sub_visual{ height: 200px; margin-bottom: 80px; }
+    .inner{ width: 100%; min-height: 400px; padding: 0 30px; }
+  }
+
   // [footer]
   #footer_sub{ padding: 80px 30px; }
 }
@@ -218,6 +238,20 @@
 @media screen and (max-width:539px) {
   // [header]
 
+  // [content]
+  .content{
+    padding: 0 0 80px;
+    .sub_visual{ height: 150px; margin-bottom: 50px; }
+    .inner{ min-height: 300px;
+      h1{
+        font-size: 40px;
+        span{
+          display: block;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
   
   // [footer]
   #footer_sub{
