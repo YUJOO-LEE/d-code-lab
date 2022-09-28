@@ -14,10 +14,9 @@ a {
 }
 
 .swiper {
-  width: 600px;
-  height: 300px;
-  border: 1px solid #000;
-  margin: 100px auto;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
   position: relative;
 }
 .swiper .swiper-wrapper {
