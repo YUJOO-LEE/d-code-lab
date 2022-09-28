@@ -1,7 +1,6 @@
 const frame = document.querySelector('#slider');
 const btns = frame.querySelectorAll('.btns li');
 const panel = frame.querySelector('.panel');
-let playIndex = 0;
 
 btns.forEach((btn, index) => {
   btn.addEventListener('click', (e)=>{
@@ -11,6 +10,7 @@ btns.forEach((btn, index) => {
       el.classList.remove('on');
     }
     btns[index].classList.add('on');
+    // 나중에 prev, next 버튼 등 활용하기 위해 index 사용
 
     new Anim(panel, {
       prop: 'margin-left',

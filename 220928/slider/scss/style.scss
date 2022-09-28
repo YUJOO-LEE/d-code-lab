@@ -10,9 +10,15 @@ a{ text-decoration: none; color: inherit; }
 
   .panel{
     width: 500%; height: 100%;
+    // 100% * 5
+    // #slider에 슬라이드 1개를 꽉차게 보여줄 경우 100% * 슬라이드 갯수
+    // box-sizing: border-box; 때문에 390px * 5가 됨
 
     li{
       width: 20%; height: 100%; float: left;
+      // 100% / 5
+      // 슬라이드 개별 크기
+      // .panel 틀 width / 슬라이드 갯수
 
       &:nth-of-type(1){ background-color: pink; }
       &:nth-of-type(2){ background-color: plum; }
