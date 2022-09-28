@@ -1,2 +1,37 @@
 @charset 'utf-8';
 
+*{ margin: 0; padding: 0; box-sizing: border-box; }
+ul,ol,li{ list-style: none; }
+a{ text-decoration: none; color: inherit; }
+
+#slider{
+  width: 400px; height: 250px; margin: 150px auto;
+  border: 5px solid #000; position: relative; overflow: hidden;
+
+  .panel{
+    width: 500%; height: 100%;
+
+    li{
+      width: 20%; height: 100%; float: left;
+
+      &:nth-of-type(1){ background-color: pink; }
+      &:nth-of-type(2){ background-color: plum; }
+      &:nth-of-type(3){ background-color: violet; }
+      &:nth-of-type(4){ background-color: lightskyblue; }
+      &:nth-of-type(5){ background-color: lightblue; }
+    }
+  }
+
+  .btns{
+    position: absolute; bottom: 15px; left: 50px;
+    li{
+      float: left; margin-right: 20px;
+      a{
+        display: block; width: 20px; height: 20px;
+        background-color: #fff;
+      }
+
+      &.on a{ background-color: #000; }
+    }
+  }
+}
