@@ -21,7 +21,7 @@ window.addEventListener('load', ()=>{  // 페이지 로드 후 함수 실행
       for (let el of btns) {
         el.classList.remove('on');
       }
-      el.classList.add('on');
+      e.currentTarget.classList.add('on');
     })
   }
 })
