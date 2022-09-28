@@ -7,29 +7,32 @@
 ul,ol,li{ list-style: none; }
 a{ text-decoration: none; color: inherit; }
 
+// [header]
 header{
   width: 400px; height: 100vh; position: fixed; top: 0; left: 0;
   background: linear-gradient(45deg, lightblue, pink);
   transition: 1s;
 
+  // 페이지 제목
   h1{
     font: bold 50px/1 'orbitron'; color: #fff; letter-spacing: 1px;
     position: absolute; left: 50px; top: 50%;
-    transform: translateY(-150%);
+    transform: translateY(-150%); // 중간보다 조금 더 올라오게
 
-   &::before{
+   &::before{ // 하단 text (라인을 after로 줄 예정이라 before 사용)
     content: 'UI/UX DEVELOPMENT'; display: block;
     font: 14px/1 'orbitron'; color: #fff; letter-spacing: 1px;
     position: absolute; left: 0; top: 95px;
    }
 
-   &::after{
+   &::after{  // 하단 라인
     content: ''; display: block;
     width: 150px; height: 2px; background-color: #fff;
     margin-top: 20px;
    }
   }
 
+  // 하단 버튼들
   ul{
     position: absolute; bottom: 100px; left: 50px;
     li{
@@ -42,13 +45,15 @@ header{
   }
 }
 
+// [main]
 main{
   margin-left: 400px; min-height: 100vh; padding: 20px; background-color: #efefef;
 
-  &::after{
+  &::after{ // float 해제
     content: ''; display: block; clear: both;
   }
 
+  // 이미지 리스트
   section{
     width: 100%; float: left;
 
@@ -60,17 +65,32 @@ main{
         border-radius: 4px; box-shadow: 5px 5px 10px rgba($color: #000, $alpha: 0.1);
         
         img{ width: 100%; }
-        h2{
+        a{  // favorite 버튼
+          display: block;
+          position: absolute; right: 40px; top: 40px;
+          font-size: 20px;
+
+          i{ color: #fff; transition: 0.3s;}
+
+          &:hover i{
+            transform: rotate(72deg); // 360deg / 5
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+          }
+
+          &.on i{ color: yellow; }
+        }
+        h2{ // 이미지 제목
           margin-top: 15px; margin-bottom: 5px;
           font: bold 14px/1 'arial'; color: #444; letter-spacing: 1px;
         }
-        p{
+        p{  // 이미지 설명
           font: 12px/1.2 'arial'; color: #777; margin-bottom: 15px;
         }
       }
     }
   }
 
+  // 상단 버튼
   ul{
     float: right; margin-bottom: 10px;
 
@@ -82,21 +102,25 @@ main{
         font: bold 12px/26px 'orbitron'; text-align: center;
         color: #aaa; letter-spacing: 1px;
         background-color: #fff; border-radius: 4px;
-        box-shadow: 0px 0px 10px rgba($color: #000, $alpha: 0.05);
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.05);
+        transition: 0.3s;
 
         &:hover{
           color: #888;
-          box-shadow: 0px 0px 10px rgba($color: #000, $alpha: 0.2);
+          box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
         }
       }
       &.on a{
         background: linear-gradient(45deg, lightblue, pink);
         color: #fff; font-weight: bold;
-        box-shadow: 0px 0px 10px rgba($color: #fff, $alpha: 1)
+        box-shadow: 0px 0px 10px rgba(255,255,255,1)
       }
     }
   }
 }
+
+
+// 반응형 
 
 @media screen and (max-width: 1559px){
   header{

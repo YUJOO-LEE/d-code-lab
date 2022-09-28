@@ -98,6 +98,24 @@ main section article div {
 main section article div img {
   width: 100%;
 }
+main section article div a {
+  display: block;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  font-size: 20px;
+}
+main section article div a i {
+  color: #fff;
+  transition: 0.3s;
+}
+main section article div a:hover i {
+  transform: rotate(72deg);
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+main section article div a.on i {
+  color: yellow;
+}
 main section article div h2 {
   margin-top: 15px;
   margin-bottom: 5px;
@@ -131,6 +149,7 @@ main ul li a {
   background-color: #fff;
   border-radius: 4px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
 }
 main ul li a:hover {
   color: #888;
@@ -140,7 +159,7 @@ main ul li.on a {
   background: linear-gradient(45deg, lightblue, pink);
   color: #fff;
   font-weight: bold;
-  box-shadow: 0px 0px 10px white;
+  box-shadow: 0px 0px 10px rgb(255, 255, 255);
 }
 
 @media screen and (max-width: 1559px) {
