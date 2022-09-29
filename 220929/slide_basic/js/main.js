@@ -4,9 +4,12 @@ const panel = slider.querySelector('.panel');
 const ring = slider.querySelector('#ring');
 
 
+
 btns.forEach((btn, index) => {
   btn.addEventListener('click', (e)=>{
     e.preventDefault();
+    let isOn = e.currentTarget.classList.contains('on');
+    if (isOn) return; // 중복이벤트 방지
     activation(index);
   })
 })
@@ -27,7 +30,7 @@ function activation(index) {
   new Anim(panel, {
     prop: 'margin-left',
     value: `${index * -100}%`,
-    duration: '500',
+    duration: '1000',
   })
 
   ring.className = `rot${index}`;
