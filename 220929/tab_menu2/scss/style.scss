@@ -1,0 +1,44 @@
+@charset 'utf-8';
+
+*{ margin: 0; padding: 0; }
+ul,ol,li{ list-style: none; }
+a{ text-decoration: none; color: inherit; }
+
+#tab{
+  width: 600px; border: 1px solid black;
+  margin: 100px auto; padding-top: 40px;
+  position: relative;
+
+  dt{
+    width: calc(100% / 3); height: 40px;
+    position: absolute; top: 0;
+
+    @for $i from 1 through 3 {
+      &:nth-of-type(#{$i}) { left: calc((100% / 3) * ($i - 1))}
+    }
+
+    a{
+      display: block;
+      width: 100%; height: 100%;
+      background-color: #555;
+      font: bold 14px/40px 'arial';
+      color: #bbb;
+      text-align: center;
+    }
+    &.on a{ background-color: #fff; color: #555; }
+  }
+
+  dd{
+    width: 100%; height: 200px; background-color: #fff;
+    text-align: center;
+    display: none;
+
+    a{
+      font-size: 50px; line-height: 200px;
+    }
+
+    &.on{
+      display: block;
+    }
+  }
+}

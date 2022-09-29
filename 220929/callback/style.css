@@ -1,0 +1,11 @@
+@charset 'utf-8';
+
+* { margin:0; padding: 0; }
+
+body{ height: 5000px; }
+button{ width: 200px; height: 50px; font: 20px/1 'arial';
+  display:block; margin: 50px auto; }
+section{ width: 800px; height: 500px; border: 1px solid #ddd;
+  position: relative; margin: 0 auto; }
+section #box{ width: 100px; height: 100px; background-color: lightblue;
+  position: absolute; top: 0; left: 0; }
