@@ -1,0 +1,66 @@
+@charset 'utf-8';
+
+*{ margin: 0; padding: 0; box-sizing: border-box; }
+ul,ol,li{ list-style: none; }
+a{ text-decoration: none; color: inherit; }
+
+#slider{
+  width: 100%; height: 100vh; overflow: hidden;
+  position: relative;
+
+  .panel{
+    width: 500%; height: 100%;
+
+    li{
+      width: 20%; height: 100%; float: left;
+      display: flex; justify-content: center;
+      align-items: center;
+      font-size: 50px; color: #fff;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+
+      @for $i from 1 through 5{
+        &:nth-of-type(#{$i}) { background-image: url(../img/pic#{$i}.jpg); }
+      }
+    }
+  }
+
+  .btns{
+    position: absolute; bottom: 10vh; width: 90%; left: 5%;
+
+    li{
+      float: left; width: 20%; padding: 20px;
+      perspective: 500px;
+
+      a{
+        display: block; width: 100%; height: 40px;
+        border: 1px solid #222;
+        border-radius: 20px;
+        font: 16px/40px 'arial'; text-align: center;
+        transition: 1s;
+
+        &:hover{
+          background-color: #222;
+          color: #fff;
+        }
+      }
+      &.on a{
+        background-color: #222;
+        color: #fff;
+        transform: rotateY(360deg);
+      }
+    }
+  }
+
+  #ring{
+    position: absolute; top: 50%; right: 0;
+    margin-top: -160px; margin-right: -160px;
+    transition: 1s;
+
+    @for $i from 0 through 5 {
+      &.rot#{$i}{ transform: rotate(calc(60deg * $i)); }
+    }
+  }
+}
