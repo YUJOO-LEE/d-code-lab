@@ -1,17 +1,18 @@
 const main = document.querySelector('main');
-const menus = main.querySelectorAll('nav ul li');
-const articles = main.querySelectorAll('section article');
+const btns = main.querySelectorAll('nav ul li');
+const boxes = main.querySelectorAll('section article');
 
-menus.forEach((btn, index) => {
+btns.forEach((btn, index) => {
   btn.addEventListener('click', (e)=>{
     e.preventDefault();
-
-    for (let i = 0; i < menus.length ; i++) {
-      menus[i].classList.remove('on');
-      articles[i].classList.remove('on');
-    }
-    menus[index].classList.add('on');
-    articles[index].classList.add('on');
-
+    activation(index, btns);
+    activation(index, boxes);
   })
 })
+
+function activation(index, arr) {
+  for (let el of arr) {
+    el.classList.remove('on');
+  }
+  arr[index].classList.add('on');
+}
