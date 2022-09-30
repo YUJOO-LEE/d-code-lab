@@ -15,7 +15,7 @@ window.addEventListener('scroll', ()=>{
   h1.innerText = scroll;
 
   posArr.forEach((top, index) => {
-    if (scroll >= top && scroll < (posArr[index + 1] || top + 1)) {
+    if (scroll >= top) {
       lis[index].parentElement.querySelector('.on')?.classList.remove('on');
       lis[index].classList.add('on');
     }
