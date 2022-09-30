@@ -10,10 +10,9 @@ a{ text-decoration: none; color: inherit; }
 
   ul{
     width: 100%; height: 100%;
-    display: flex; justify-content: center; align-items: center;
 
     li{
-      width: 100%; height: 100%;
+      width: 100%; height: 100%; float: left;
       display: flex; justify-content: center; align-items: center;
       font: bold 20vw/1 'arial'; color: #fff;
       opacity: 0.5;
@@ -36,10 +35,9 @@ a{ text-decoration: none; color: inherit; }
 
     ul{
       width: 100%; height: 100%;
-      display: flex; justify-content: center; align-items: center;
 
       li{
-        width: 100%; height: 100%;
+        width: 100%; height: 100%; float: left;
         display: flex; justify-content: center; align-items: center;
         font: bold 30px/1 'arial'; color: #fff;
 

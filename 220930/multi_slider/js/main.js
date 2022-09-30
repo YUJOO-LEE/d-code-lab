@@ -8,6 +8,9 @@ let clickable = true;
 init(slider);
 init(slider2);
 
+// 동일한 기능을 복수개 이상 사용시 함수로 호출
+// 큰 틀을 파라미터로 넘겨서 지역변수 사용
+
 prevBtn.addEventListener('click', (e)=>{
   e.preventDefault();
   if (!clickable) return;
