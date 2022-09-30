@@ -15,16 +15,16 @@ a {
 }
 
 #slider {
-  width: 400px;
-  height: 250px;
+  width: 100%;
+  height: 100vh;
   position: relative;
-  margin: 100px auto;
+  overflow: hidden;
 }
 #slider ul {
   position: absolute;
   top: 0;
   left: 0;
-  width: 300%;
+  width: 100%;
   height: 100%;
   float: left;
   font-size: 40px;
@@ -48,6 +48,12 @@ a {
 }
 #slider ul li[data-index="3"] {
   background-color: orange;
+}
+#slider ul li[data-index="4"] {
+  background-color: palegoldenrod;
+}
+#slider ul li[data-index="5"] {
+  background-color: lightgreen;
 }
 
 .prev {

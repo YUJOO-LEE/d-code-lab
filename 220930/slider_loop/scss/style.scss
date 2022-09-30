@@ -5,13 +5,13 @@ ul,ol,li{ list-style: none; }
 a{ text-decoration: none; color: inherit; }
 
 #slider{
-  width: 400px; height: 250px;
-  position: relative; margin: 100px auto;
+  width: 100%; height: 100vh;
+  position: relative; overflow: hidden;
 
   ul{
     position: absolute;
     top: 0; left: 0;
-    width: calc(100% * 3); height: 100%; float: left;
+    width: 100%; height: 100%; float: left;
     font-size: 40px; color: #fff;
     display: flex; justify-content: center; align-items: center;
 
@@ -22,6 +22,8 @@ a{ text-decoration: none; color: inherit; }
       &[data-index="1"]{ background-color: lightblue; }
       &[data-index="2"]{ background-color: pink; }
       &[data-index="3"]{ background-color: orange; }
+      &[data-index="4"]{ background-color: palegoldenrod; }
+      &[data-index="5"]{ background-color: lightgreen; }
     }
   }
 }

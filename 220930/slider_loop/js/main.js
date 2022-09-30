@@ -1,38 +1,53 @@
 const slider = document.querySelector('#slider');
 const ul = slider.querySelector('ul');
+const lis = slider.querySelectorAll('ul li');
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
+const len = lis.length;
+let clickable = true;
 
-ul.style.left = "-100%";
+init();
 
 next.addEventListener('click', (e)=>{
   e.preventDefault();
-
-  new Anim(ul, {
-    prop: 'left',
-    value: '-200%',
-    duration: 1000,
-    callback: ()=>{
-      ul.append(ul.firstElementChild);
-      ul.style.left = "-100%";
-    }
-  })
+  if (!clickable) return;
+  clickable = false;
+  sliding('next');
 })
 
 prev.addEventListener('click', (e)=>{
   e.preventDefault();
-
-  new Anim(ul, {
-    prop: 'left',
-    value: '0%',
-    duration: 1000,
-    callback: ()=>{
-      ul.prepend(ul.lastElementChild);
-      ul.style.left = "-100%";
-    }
-  })
+  if (!clickable) return;
+  clickable = false;
+  sliding('prev');
 })
 
+function sliding(event) {
+  value = event === 'prev' ? '0%' : '-200%';
+  new Anim(ul, {
+    prop: 'left',
+    value: value,
+    duration: 1000,
+    callback: ()=>{
+      if (event === 'prev') {
+        ul.prepend(ul.lastElementChild);
+      } else{
+        ul.append(ul.firstElementChild);
+      }
+      ul.style.left = "-100%";
+      clickable = true;
+    }
+  })
+}
+
+function init() {
+  ul.prepend(ul.lastElementChild);
+  ul.style.left = '-100%';
+  ul.style.width = `${100 * len}%`;
+  lis.forEach((el)=>{
+    el.style.width = `${100 / len}%`;
+  })
+}
 /*
 DOM 구조 변경
 문서와 기존 구조를 js를 통해 변경
