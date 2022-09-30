@@ -24,6 +24,7 @@ prev.addEventListener('click', (e)=>{
 
 function sliding(event) {
   value = event === 'prev' ? '0%' : '-200%';
+  
   new Anim(ul, {
     prop: 'left',
     value: value,
@@ -71,5 +72,24 @@ next 버튼 클릭 : ul left: -100% => -200%로 이동
 3. 이동이 끝난 뒤 쌓인 li를 ul 안이나 뒤로 재배치 필요
 
 4. ul의 초기 위치 left 값 -100%으로 초기화
+
+*/
+
+
+/*
+
+nth-of-type은 li 순서에 따라 스타일을 적용하므로
+loop slider같은 li순서가 바뀌는 경우에는 적용할 수 없음.
+
+**data-식별자**
+HTML5부터 적용됨
+브라우저는 data 속성에 대해 관여하지 않음
+개발자 특수하게 사용할 용도
+
+- css에서 사용
+`요소[data-식별자="값"]`
+
+- js에서 사용
+`요소.dataset.식별자 = '값'`
 
 */

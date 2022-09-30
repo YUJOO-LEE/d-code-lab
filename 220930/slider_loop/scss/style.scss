@@ -40,15 +40,3 @@ a{ text-decoration: none; color: inherit; }
   right: 5%;
   margin-top: -50px;
 }
-
-/*
-
-nth-of-type은 li 순서에 따라 스타일을 적용하므로
-loop slider같은 li순서가 바뀌는 경우에는 적용할 수 없음.
-
-**data-@**
-HTML5부터 적용됨
-브라우저는 data 속성에 대해 관여하지 않음
-개발자 특수하게 사용할 용도
-
-*/
