@@ -1,0 +1,49 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#slider {
+  width: 400px;
+  height: 250px;
+  position: relative;
+  margin: 100px auto;
+}
+#slider ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 100%;
+  float: left;
+  font-size: 40px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+
+nth-of-type은 li 순서에 따라 스타일을 적용하므로
+loop slider같은 li순서가 바뀌는 경우에는 적용할 수 없음.
+
+**data-@**
+HTML5부터 적용됨
+브라우저는 data 속성에 대해 관여하지 않음
+개발자 특수하게 사용할 용도
+
+*/
+
+/*# sourceMappingURL=style.css.map */
