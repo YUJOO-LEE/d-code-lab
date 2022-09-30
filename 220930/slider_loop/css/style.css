@@ -33,6 +33,36 @@ a {
   justify-content: center;
   align-items: center;
 }
+#slider ul li {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#slider ul li[data-index="1"] {
+  background-color: lightblue;
+}
+#slider ul li[data-index="2"] {
+  background-color: pink;
+}
+#slider ul li[data-index="3"] {
+  background-color: orange;
+}
+
+.prev {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  margin-top: -50px;
+}
+
+.next {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  margin-top: -50px;
+}
 
 /*
 
