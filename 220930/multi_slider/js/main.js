@@ -30,7 +30,7 @@ function sliding(frame, event) {
   // 지정한 event가 prev라면 0%, 아니면(next) -200%
   
   new Anim(ul, {
-    prop: 'left',
+    prop: 'margin-left',
     value: leftSize,
     duration: 1000,
     callback: ()=>{
@@ -39,7 +39,7 @@ function sliding(frame, event) {
       } else{
         ul.append(ul.firstElementChild);
       }
-      ul.style.left = "-100%";
+      ul.style.marginLeft = "-100%";
       clickable = true;
     }
   })
@@ -51,7 +51,7 @@ function init(frame) {
   const len = lis.length;
 
   ul.prepend(ul.lastElementChild);
-  ul.style.left = '-100%';
+  ul.style.marginLeft = '-100%';
   ul.style.width = `${100 * len}%`;
   lis.forEach((el)=>{
     el.style.width = `${100 / len}%`;
