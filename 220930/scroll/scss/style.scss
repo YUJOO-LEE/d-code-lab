@@ -5,17 +5,78 @@ ul,ol,li{ list-style: none; }
 a{ text-decoration: none; color: inherit; }
 
 h1{
-  position: fixed; top: 0; left: 50%;
+  position: fixed; top: 0; left: 50%; transform: translateX(-50%);
   font-size: 100px; z-index: 10;
 }
 
 section{
-  width: 100%; position: relative;
+  width: 100%; height: 100vh; position: relative;
+  display: flex; justify-content: center; align-items: center; gap: 20px;
+  perspective: 700px; overflow: hidden;
   
-  &:nth-of-type(1) { height: 1000px; background-color: orange; }
-  &:nth-of-type(2) { height: 700px; background-color: yellow; }
-  &:nth-of-type(3) { height: 900px; background-color: pink; }
-  &:nth-of-type(4) { height: 100vh; background-color: lightblue; }
+  &:nth-of-type(1){
+    height: 1000px;
+    background-color: orange;
+  }
+  &:nth-of-type(2){
+    height: 700px;
+    background-color: yellow;
+
+    article{
+      width: 280px; height: 50%; background-color: #fff;
+      transform: rotateY(200deg) translateY(100px);
+      transition: 0.5s; opacity: 0;
+
+      @for $i from 1 through 4 {
+        &:nth-of-type(#{$i}){ transition-delay: 0.1s * $i; }
+      }
+    }
+
+    p{
+      width: 50px; height: 50px; background-color: #000;
+      position: absolute; bottom: 0; left: 0;
+    }
+  }
+  &:nth-of-type(3){
+    background: linear-gradient(180deg, lightblue, blue);
+    
+    .fish{
+      position: absolute;  left: 0;
+
+      &.fish1{
+        width: 100px; height: 100px; bottom: 20vh;
+        font-size: 100px; color: orange;
+      }
+      &.fish2{
+        width: 80px; height: 80px; bottom: 15vh;
+        font-size: 80px; color: red;
+      }
+      &.fish3{
+        width: 120px; height: 120px;
+        bottom: 10vh;
+        font-size: 120px; color: yellow;
+      }
+      &.fish4{
+        width: 110px; height: 110px;
+        bottom: 30vh;
+        font-size: 110px; color: green;
+      }
+      &.fish5{
+        width: 90px; height: 90px;
+        bottom: 40vh;
+        font-size: 90px; color: white;
+      }
+    }
+    
+  }
+  &:nth-of-type(4){ background-color: pink; }
+
+
+  &.on{
+    article{
+      opacity: 1; transform: rotateY(0deg) translateY(0px);
+    }
+  }
 }
 
 ul{

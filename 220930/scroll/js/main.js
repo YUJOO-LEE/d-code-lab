@@ -1,6 +1,8 @@
 const h1 = document.querySelector('h1');
 const sections = document.querySelectorAll('section');
 const lis = document.querySelectorAll('ul li');
+const box2P = document.querySelector('p');
+const box3Fishs = document.querySelectorAll('.fish');
 
 const posArr = [];
 let clickable = true;
@@ -14,10 +16,27 @@ window.addEventListener('scroll', ()=>{
 
   h1.innerText = scroll;
 
-  posArr.forEach((top, index) => {
-    if (scroll >= top) {
-      lis[index].parentElement.querySelector('.on')?.classList.remove('on');
+  // article 2
+  box2P.style.left = `${(scroll - posArr[1] + (box2P.parentElement.clientHeight / 2)) / posArr[1] * 100}%`;
+
+  //article 3
+  box3Fishs[0].style.left = `${(scroll - posArr[2] + 100) * 1.8}px`;
+  box3Fishs[1].style.left = `${(scroll - posArr[2]) * 1.5}px`;
+  box3Fishs[2].style.left = `${scroll - posArr[2]}px`;
+  box3Fishs[3].style.left = `${(scroll - posArr[2] + 300) * 1.2}px`;
+  box3Fishs[4].style.left = `${(scroll - posArr[2]) * 2}px`;
+
+
+  sections.forEach((article, index) => {
+    if (scroll >= posArr[index] - (article.clientHeight / 2)) {
+      for (let el of lis) {
+        el.classList.remove('on');
+      }
+      for (let el of sections) {
+        el.classList.remove('on');
+      }
       lis[index].classList.add('on');
+      article.classList.add('on');
     }
   })
 })
