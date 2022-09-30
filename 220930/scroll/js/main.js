@@ -4,9 +4,9 @@ const lis = document.querySelectorAll('ul li');
 const box2P = document.querySelector('p');
 const box3Fishs = document.querySelectorAll('.fish');
 
-const posArr = [];
 let clickable = true;
 
+const posArr = [];
 for (let el of sections) posArr.push(el.offsetTop);
 
 window.addEventListener('scroll', ()=>{
