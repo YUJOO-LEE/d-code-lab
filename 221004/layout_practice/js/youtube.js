@@ -58,3 +58,12 @@ fetch(url)
     vidList.append(pop);
 
   })
+
+  vidList.addEventListener('click', (e)=>{
+    const pop = vidList.querySelector('.pop');
+
+    if (!pop) return;
+
+    const btnClose = pop.querySelector('.btnClose');
+    if (e.target === pop || e.target === btnClose) pop.remove();
+  })
