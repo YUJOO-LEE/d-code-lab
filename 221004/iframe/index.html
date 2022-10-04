@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iframe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="https://www.coupang.com" target="site">쿠팡</a>
+
+  <iframe src="https://www.dbcut.com" name="site" frameborder="0">이 브라우저는 iframe을 지원하지 않습니다.</iframe>
+
+  <!-- 
+
+    name 속성
+
+    - 주 사용 : name속성은 form 전송 이벤트 발생 시 서버로 데이터를 전송하기 위한 식별자
+    - 파라미터를 전송하기 위해 지정하는 것으로 중복 가능
+
+    id 속성
+    - name과 비슷한 용도로 사용이 가능하지만 고유값을 가져서 한번만 사용이 가능
+    - 주 사용 : 자바스크립트에서 다루기 위한 목적으로 지정
+
+    iframe
+    - inline 요소
+    - html 웹문서 안에 또 다른 웹문서를 넣을 수 있으며, 보통 동영상을 불러올 때 사용
+    - 지원하지 않는 브라우저가 많아 대체될 내용을 넣어주는 것이 좋음
+    - 기존의 iframe에서 사용하던 속성은 html5가 되면서 지원을 안하는 경우가 많음
+
+   -->
+
+   <p>
+    <iframe src="https://www.youtube.com/watch?v=YbtMj4TeU90" frameborder="0">이 브라우저는 iframe을 지원하지 않습니다.</iframe>
+   </p>
+</body>
+</html>
