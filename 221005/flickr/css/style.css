@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  background-color: #efefef;
+}
+body main #wrap {
+  width: 100%;
+  padding: 50px;
+  overflow: hidden;
+}
+body main #wrap #list {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 1s;
+}
+body main #wrap #list::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+body main #wrap #list li {
+  width: 16.6666666667%;
+  float: left;
+  padding: 10px;
+}
+body main #wrap #list li div {
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+body main #wrap #list li div a img {
+  width: 100%;
+}
+body main #wrap #list li div p {
+  font: 12px/1.2 "arial";
+  color: #777;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+body main #wrap #list.on {
+  transform: translateY(0px);
+  opacity: 1;
+}
+body main #loading {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main #loading p {
+  color: #fff;
+  font-size: 50px;
+}
+body main #loading.off {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */

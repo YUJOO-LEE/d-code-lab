@@ -1,0 +1,72 @@
+// key : 67f7c54ac9fe4dd292e245fbb1302b24
+
+const key = '67f7c54ac9fe4dd292e245fbb1302b24';
+const method = 'flickr.interestingness.getList';
+const base = 'https://www.flickr.com/services/rest?';
+const perPage = 500;
+const format = 'json';
+const url = `${base}method=${method}&api_key=${key}&per_page=${perPage}&format=${format}&nojsoncallback=1`;
+
+const list = document.querySelector('#list');
+const loading = document.querySelector('#loading');
+
+fetch(url)
+  .then(data=>{
+    return data.json();
+  })
+  .then(json=>{
+    const items = json.photos.photo;
+
+    let htmls = '';
+    items.map(item=>{
+      const thumbnail = `https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`;
+      const original = `https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg`;
+
+      htmls += `
+        <li class="item">
+          <div>
+            <a href="${original}">
+              <img src="${thumbnail}">
+            </a>
+            <p>${item.title}</p>
+          </div>
+        </li>
+      `;
+    })
+
+    list.innerHTML = htmls;
+
+    // 이미지 로딩 확인
+    // 동적으로 생성된 이미지 갯수 구함
+    const imgs = list.querySelectorAll('img');
+    const len = imgs.length;
+    let count = 0;
+    
+    for (let el of imgs) {
+      el.addEventListener('load', ()=>{
+        count++;
+        loading.querySelector('p').textContent = Math.floor(count/len * 100);
+
+        if(count === len) {
+          isoLayout();
+          loading.classList.add('off');
+        }
+        // 로딩된 이미지 갯수가 리스트 총 갯수와 같아지면 함수실행
+      })
+    }
+  })
+
+function isoLayout(){
+
+  list.classList.add('on');
+  // 함수 호출 시 초기모션 추가
+  // 모든 이미지가 로딩될 때 까지 isotope 적용되지 않으면 지저분해 보이기 때문에
+  // 완성된 레이아웃 보여주기 위함
+
+  new Isotope( list, {
+    // options
+    itemSelector: '.item',
+    columnWidth: '.item',
+    transitionDuration: '0.5s'
+  });
+}

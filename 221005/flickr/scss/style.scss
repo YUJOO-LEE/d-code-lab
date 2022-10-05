@@ -1,0 +1,62 @@
+@charset 'utf-8';
+
+*{ margin: 0; padding: 0; box-sizing: border-box; }
+ul,ol,li{ list-style: none; }
+a{ text-decoration: none; color: inherit; }
+
+body{
+  background-color: #efefef;
+
+  main{
+    #wrap{
+      width: 100%; padding: 50px; overflow: hidden;
+      #list{
+        transform: translateY(100px);
+        opacity: 0; 
+        transition: 1s;
+        // 이미지 로딩 후 호출 모션
+        
+        &::after{
+          content: ''; display: block; clear: both;
+        }
+        
+        li{
+          width: calc(100% / 6); float: left; padding: 10px;
+          div{
+            width: 100%; background-color: #fff;
+            padding: 20px; border-radius: 5px;
+            box-shadow: 5px 5px 20px rgba(0,0,0,0.1);
+
+            a{
+              img{
+                width: 100%;
+              }
+            }
+            p{
+              font: 12px/1.2 'arial'; color: #777;
+              margin-top: 10px; margin-bottom: 10px;
+            }
+          }
+        }
+
+        &.on{
+          transform: translateY(0px); opacity: 1;
+        }
+      }
+    }
+
+    #loading{
+      width: 100%; height: 100%;
+      position: absolute; top: 0; left: 0;
+      background-color: rgba(0,0,0,0.6);
+      display: flex; justify-content: center; align-items: center;
+
+      p{
+        color: #fff;
+        font-size: 50px;
+      }
+
+      &.off{ display: none; }
+    }
+  }
+}
