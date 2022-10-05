@@ -60,8 +60,8 @@ function createList(items){
           </a>
           <p>${item.title}</p>
           <span>
-            <img src="http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg">
             <strong>${item.owner}</strong>
+            <img src="http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg">
           </span>
         </div>
       </li>
