@@ -18,14 +18,41 @@ const $input = $searchBox.querySelector('#search');
 
 callData(urlAll);
 
+// 검색 기능
 $searchBox.addEventListener('submit', (e)=>{
   e.preventDefault();
+  const tag = $input.value.trim();
 
-  const tag = $input.value;
+  if (!tag) { // 공백 처리
+    $input.style.border = '2px solid red';
+    return;
+  }
+
+  $input.style.border = '';
   const urlSearch = `${base}method=${method2}&api_key=${key}&per_page=${perPage}&format=${format}&nojsoncallback=1&tags=${tag}&privacy_filter=1`;
   callData(urlSearch);
 })
 
+// 썸네일 클릭 이벤트
+$list.addEventListener('click', (e)=>{
+  e.preventDefault();
+  if (e.target.className !== 'thumbnail') return;
+  //e.target.closest('a').getAttribute('href')
+
+  const $aside = document.createElement('aside');
+  const asideCon = `
+    <img src="${e.target.closest('a').getAttribute('href')}">
+    <span>CLOSE</span>
+  `;
+  $aside.innerHTML = asideCon;
+  document.querySelector('main').append($aside);
+
+  $aside.querySelector('span').addEventListener('click', ()=>{
+    $aside.remove();
+  })
+})
+
+// 데이터 불러오기
 function callData(url){
   $list.innerHTML = '';
   $loading.classList.remove('off');
@@ -33,15 +60,20 @@ function callData(url){
   $loading.querySelector('p').textContent = '0';
 
   fetch(url)
-  .then(data=>{
-    console.log(data);
-    return data.json();
-  })
-  .then(json=>{
-    const items = json.photos.photo;
-    createList(items);
-    delayLoading();
-  })
+    .then(data=>{
+      return data.json();
+    })
+    .then(json=>{
+      const items = json.photos.photo;
+      
+      if (!items.length) {
+        $list.innerHTML = '검색된 데이터가 없습니다.';
+        isoLayout();
+        return;
+      }
+      createList(items);
+      delayLoading();
+    })
 }
 
 function createList(items){
@@ -50,18 +82,16 @@ function createList(items){
     const thumbnail = `https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`;
     const original = `https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg`;
 
-    //live.staticflickr.com/7832/buddyicons/30752088@N08.jpg
-    // <img src="http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg">
     htmls += `
       <li class="item">
         <div>
           <a href="${original}">
-            <img src="${thumbnail}">
+            <img src="${thumbnail}" class="thumbnail">
           </a>
           <p>${item.title}</p>
           <span>
             <strong>${item.owner}</strong>
-            <img src="http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg">
+            <img src="http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg" class="profile">
           </span>
         </div>
       </li>
@@ -93,12 +123,14 @@ function delayLoading(){
     el.addEventListener('error', ()=>{
       // el.closest('.item').style.display = 'none';
       // 에러 대상 완전히 지움
-
-      el.closest('.item').querySelector('div a img').setAttribute('src', './img/k1.jpg');
-      // thumbnail 엑박 방지
-
-      el.closest('.item').querySelector('div span img').setAttribute('src', 'https://www.flickr.com/images/buddyicon.gif');
-      // buddyIcon 엑박 방지
+      
+      if (el.className === 'thumbnail') {
+        el.setAttribute('src', './img/k1.jpg');
+        // thumbnail 엑박 방지
+      } else {
+        el.setAttribute('src', 'https://www.flickr.com/images/buddyicon.gif');
+        // buddyIcon 엑박 방지
+      }
     })
   }
 }
