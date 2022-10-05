@@ -1,5 +1,6 @@
 // key : 67f7c54ac9fe4dd292e245fbb1302b24
 // buddyIcon : http://farm{icon-farm}.staticflickr.com/{icon-server}/buddyicons/{nsid}.jpg
+// //live.staticflickr.com/7832/buddyicons/30752088@N08.jpg
 
 const key = '67f7c54ac9fe4dd292e245fbb1302b24';
 const method1 = 'flickr.interestingness.getList';
@@ -33,11 +34,11 @@ function callData(url){
 
   fetch(url)
   .then(data=>{
+    console.log(data);
     return data.json();
   })
   .then(json=>{
     const items = json.photos.photo;
-
     createList(items);
     delayLoading();
   })
@@ -49,6 +50,8 @@ function createList(items){
     const thumbnail = `https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`;
     const original = `https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg`;
 
+    //live.staticflickr.com/7832/buddyicons/30752088@N08.jpg
+    // <img src="http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg">
     htmls += `
       <li class="item">
         <div>
@@ -56,6 +59,10 @@ function createList(items){
             <img src="${thumbnail}">
           </a>
           <p>${item.title}</p>
+          <span>
+            <img src="http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg">
+            <strong>${item.owner}</strong>
+          </span>
         </div>
       </li>
     `;
@@ -84,7 +91,14 @@ function delayLoading(){
     })
 
     el.addEventListener('error', ()=>{
-      el.closest('.item').style.display = 'none';
+      // el.closest('.item').style.display = 'none';
+      // 에러 대상 완전히 지움
+
+      el.closest('.item').querySelector('div a img').setAttribute('src', './img/k1.jpg');
+      // thumbnail 엑박 방지
+
+      el.closest('.item').querySelector('div span img').setAttribute('src', 'https://www.flickr.com/images/buddyicon.gif');
+      // buddyIcon 엑박 방지
     })
   }
 }
