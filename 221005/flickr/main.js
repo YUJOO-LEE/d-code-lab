@@ -8,15 +8,15 @@ const method2 = 'flickr.photos.search';
 const base = 'https://www.flickr.com/services/rest?';
 const perPage = 500;
 const format = 'json';
-const urlAll = `${base}method=${method1}&api_key=${key}
-&per_page=${perPage}&format=${format}&nojsoncallback=1`;
+const urlAll = `${base}method=${method1}&api_key=${key}&per_page=${perPage}&format=${format}&nojsoncallback=1`;
+// 모든 이미지 불러오기
 
 const $list = document.querySelector('#list');
 const $loading = document.querySelector('#loading');
 const $searchBox = document.querySelector('#searchBox form');
 const $input = $searchBox.querySelector('#search');
 
-callData(urlAll);
+callData(urlAll); // 첫 화면 출력
 
 // 검색 기능
 $searchBox.addEventListener('submit', (e)=>{
@@ -37,7 +37,6 @@ $searchBox.addEventListener('submit', (e)=>{
 $list.addEventListener('click', (e)=>{
   e.preventDefault();
   if (e.target.className !== 'thumbnail') return;
-  //e.target.closest('a').getAttribute('href')
 
   const $aside = document.createElement('aside');
   const asideCon = `
@@ -47,17 +46,34 @@ $list.addEventListener('click', (e)=>{
   $aside.innerHTML = asideCon;
   document.querySelector('main').append($aside);
 
+  // close 버튼 클릭 이벤트 부여
   $aside.querySelector('span').addEventListener('click', ()=>{
     $aside.remove();
   })
 })
 
+// 화면 전환
+function changScreen(screen) {
+  if (screen === 'reset') {
+
+    $list.innerHTML = '';
+    $loading.classList.remove('off');
+    $list.classList.remove('on');
+    $loading.querySelector('p').textContent = '0';
+
+  } else if (screen === 'show') {
+
+    $loading.classList.add('off');
+    $list.classList.add('on');
+    // 함수 호출 시 초기모션 추가
+    // 모든 이미지가 로딩될 때 까지 isotope 적용되지 않으면 지저분해 보이기 때문에
+    // 완성된 레이아웃 보여주기 위함
+  }
+}
+
 // 데이터 불러오기
 function callData(url){
-  $list.innerHTML = '';
-  $loading.classList.remove('off');
-  $list.classList.remove('on');
-  $loading.querySelector('p').textContent = '0';
+  changScreen('reset');
 
   fetch(url)
     .then(data=>{
@@ -66,16 +82,18 @@ function callData(url){
     .then(json=>{
       const items = json.photos.photo;
       
-      if (!items.length) {
+      if (!items.length) {  // 데이터 없을 때 예외처리
         $list.innerHTML = '검색된 데이터가 없습니다.';
         isoLayout();
         return;
       }
+
       createList(items);
       delayLoading();
     })
 }
 
+// 리스트 DOM 생성
 function createList(items){
   let htmls = '';
   items.map(item=>{
@@ -101,8 +119,8 @@ function createList(items){
   $list.innerHTML = htmls;
 }
 
+// 이미지 로딩 확인
 function delayLoading(){
-  // 이미지 로딩 확인
   // 동적으로 생성된 이미지 갯수 구함
   const imgs = $list.querySelectorAll('img');
   const len = imgs.length;
@@ -135,13 +153,9 @@ function delayLoading(){
   }
 }
 
+// 레이아웃 설정 
 function isoLayout(){
-
-  $loading.classList.add('off');
-  $list.classList.add('on');
-  // 함수 호출 시 초기모션 추가
-  // 모든 이미지가 로딩될 때 까지 isotope 적용되지 않으면 지저분해 보이기 때문에
-  // 완성된 레이아웃 보여주기 위함
+  changScreen('show');
 
   new Isotope( $list, {
     // options
