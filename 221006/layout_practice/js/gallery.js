@@ -1,19 +1,20 @@
 // key : 67f7c54ac9fe4dd292e245fbb1302b24
-// buddyIcon : http://farm{icon-farm}.staticflickr.com/{icon-server}/buddyicons/{nsid}.jpg
+
+const $body = document.querySelector('body');
+const $list = $body.querySelector('#list');
+const $loading = $body.querySelector('#loading');
+const $searchBox = $body.querySelector('#searchBox form');
+const $input = $searchBox.querySelector('#search');
 
 const key = '67f7c54ac9fe4dd292e245fbb1302b24';
 const method1 = 'flickr.interestingness.getList';
 const method2 = 'flickr.photos.search';
 const base = 'https://www.flickr.com/services/rest?';
-const perPage = 500;
+const perPage = 20;
 const format = 'json';
 const urlAll = `${base}method=${method1}&api_key=${key}&per_page=${perPage}&format=${format}&nojsoncallback=1`;
 // 모든 이미지 불러오기
 
-const $list = document.querySelector('#list');
-const $loading = document.querySelector('#loading');
-const $searchBox = document.querySelector('#searchBox form');
-const $input = $searchBox.querySelector('#search');
 
 callData(urlAll); // 첫 화면 출력
 
@@ -43,11 +44,13 @@ $list.addEventListener('click', (e)=>{
     <span>CLOSE</span>
   `;
   $aside.innerHTML = asideCon;
-  document.querySelector('main').append($aside);
+  $body.querySelector('#gallery').append($aside);
+  $body.style.overflow = 'hidden';
 
   // close 버튼 클릭 이벤트 부여
   $aside.querySelector('span').addEventListener('click', ()=>{
     $aside.remove();
+    $body.style.overflow = '';
   })
 })
 

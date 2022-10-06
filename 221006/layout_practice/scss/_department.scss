@@ -1,0 +1,80 @@
+.department{
+  .sub_visual{
+    background: url(../img/news1.jpg) no-repeat center/cover;
+  }
+
+  .inner{
+    .division{
+      width: 100%; height: 600px;
+      background: url(../img/bgDIvision.jpg) no-repeat center/contain;
+
+      .div_tree{
+        width: 100%; position: absolute; top: -9999px; left: 0;
+        opacity: 0; transition: 0.5s;
+        li{
+          span{
+            display: block; width: 40%; height: 50px; background-color: #111;
+            font: bold 13px/50px '맑은 고딕'; color: #fff; text-align: center;
+            border-radius: 25px; margin-bottom: 20px;
+            position: relative;
+
+            &::after{
+              content: ''; display: block;
+              position: absolute; top: 50px; left: 50px;
+              width: 1px; height: calc((50px + 20px) * 17 - (50px / 2));
+              background-color: #aaa;
+            }
+          }
+
+          ul li{
+            span{
+              background-color: #666;
+              transform: translateX(70px);
+              &::before{
+                content: ''; display: block;
+                position: absolute;
+                width: 20px; height: 1px;
+                background-color: #aaa;
+                top: 50%; left: -20px;
+              }
+            }
+            &:nth-of-type(1) span::after{ display: none; }
+            &:nth-of-type(2) span::after{ display: none; }
+            &:nth-of-type(3) span::after{ height: calc((50px + 20px) * 2 - (50px / 2)); }
+            &:nth-of-type(4) span::after{ height: calc((50px + 20px) * 3 - (50px / 2)); }
+            &:nth-of-type(5) span::after{ height: calc((50px + 20px) * 2 - (50px / 2)); }
+            &:nth-of-type(6) span::after{ height: calc((50px + 20px) * 3 - (50px / 2)); }
+            &:nth-of-type(7) span::after{ height: calc((50px + 20px) * 2 - (50px / 2)); }
+
+            ul li{
+              span{
+                background-color: #999;
+                transform: translateX(140px);
+                &::after{ display: none; }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1179px) {
+  .department{
+    .inner{
+      .division{ height: 60vh;}
+    }
+  }  
+}
+
+
+@media screen and (max-width: 539px) {
+  .department{
+    .inner{
+      .division{ background: none; height: auto; 
+        .div_tree{ position: relative; top: 0; opacity: 1;}
+      }
+    }
+  }  
+}

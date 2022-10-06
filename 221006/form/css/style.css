@@ -1,0 +1,99 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Dangrek&family=Raleway:wght@100&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.hidden {
+  text-indent: -9999px;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+#join {
+  width: 100%;
+  padding: 150px 0;
+}
+#join .inner {
+  width: 1180px;
+  margin: 0 auto;
+}
+#join .inner fieldset {
+  border: none;
+}
+#join .inner h1 {
+  font: normal 60px/1 "Raleway";
+  color: #555;
+  margin-bottom: 50px;
+}
+#join .inner table {
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+  border-collapse: collapse;
+}
+#join .inner table tr th, #join .inner table tr td {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 25px;
+}
+#join .inner table tr th {
+  width: 20%;
+}
+#join .inner table tr th input[type=reset], #join .inner table tr th input[type=submit] {
+  width: 30%;
+  height: 40px;
+  border: 1px solid #333;
+  margin: 10px;
+  font: bold 14px/40px "arial";
+  color: #555;
+  cursor: pointer;
+  transition: 0.5s;
+}
+#join .inner table tr th input[type=reset]:hover, #join .inner table tr th input[type=submit]:hover {
+  background-color: #333;
+  color: #fff;
+}
+#join .inner table tr td {
+  border-left: 1px solid #aaa;
+}
+#join .inner table tr td input[type=text], #join .inner table tr td input[type=password], #join .inner table tr td input[type=email], #join .inner table tr td select {
+  width: 40%;
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 10px;
+  border: 1px solid #aaa;
+}
+#join .inner table tr td input[type=radio], #join .inner table tr td input[type=checkbox] {
+  margin-left: 30px;
+}
+#join .inner table tr td input[type=radio]:first-of-type, #join .inner table tr td input[type=checkbox]:first-of-type {
+  margin-left: 0;
+}
+#join .inner table tr td textarea {
+  resize: none;
+  width: 60%;
+  height: 150px;
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 10px;
+  border: 1px solid #aaa;
+}
+#join .inner table tr td p {
+  font: 11px/1 "맑은 고딕";
+  color: red;
+  margin-top: 5px;
+}
+#join .inner table tr:last-of-type th {
+  border: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
