@@ -15,11 +15,12 @@
 
 const $form = document.querySelector('#member');
 
+// SUBMIT 버튼
 $form.addEventListener('submit',(e)=>{
 
   errorReset();
 
-  if (!checkLen('userId')) {
+  if (!checkLen('userId', 5)) {
     e.preventDefault();
     errorMsg('userId', '5글자 이상 입력하세요.');
   }
@@ -51,25 +52,27 @@ $form.addEventListener('submit',(e)=>{
 
 })
 
+// 리셋 버튼
 $form.addEventListener('reset',()=>{
   errorReset();
 })
 
 
 // 입력 길이 확인
-function checkLen(name, len = 5) {
+function checkLen(name, len = 1) {
   const $input = $form.querySelector(`[name=${name}]`);
   const txt = $input.value;
 
-  return txt.length > len ? true : false;
+  return txt.length >= len ? true : false;
 }
 
 // 이메일 조건 확인
 function checkEmail(name){
   const $input = $form.querySelector(`[name=${name}]`);
+  const txt = $input.value;
   const regexp = /@/;
 
-  return regexp.test($input) ? true : false;
+  return regexp.test(txt) ? true : false;
 }
 
 // 체크 유무 확인
