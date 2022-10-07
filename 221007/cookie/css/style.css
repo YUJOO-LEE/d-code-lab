@@ -44,6 +44,7 @@ a {
 #popup {
   width: 500px;
   padding: 40px;
+  display: none;
   background-color: lightblue;
   position: absolute;
   top: 50%;
