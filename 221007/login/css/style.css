@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#utilLogin {
+  width: 100%;
+  height: 100%;
+  margin-top: 50px;
+  background-color: rgba(229, 241, 248, 0.4);
+}
+#utilLogin .inner {
+  width: 1180px;
+  height: 1000px;
+  margin: 70px auto 0;
+  padding-top: 15vh;
+  position: relative;
+  overflow: hidden;
+}
+#utilLogin .inner .loginToJoin {
+  width: 80%;
+  height: 380px;
+  padding: 50px;
+  background: #222;
+  border-radius: 10px;
+  position: absolute;
+  top: 23%;
+  left: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+#utilLogin .inner .loginToJoin h1 {
+  width: 40%;
+  font: bold 18px/1 "arial";
+  color: #fff;
+  text-align: center;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+#utilLogin .inner .loginToJoin p {
+  width: 40%;
+  font: 15px/1.1 "arial";
+  color: #fff;
+  text-align: center;
+  margin-bottom: 50px;
+}
+#utilLogin .inner .loginToJoin a {
+  display: block;
+  width: 40%;
+  padding: 10px;
+  border: 1px solid #fff;
+  font: 15px/1.1 "arial";
+  color: #fff;
+  text-align: center;
+  transition: 0.5s;
+}
+#utilLogin .inner .loginToJoin a:hover {
+  color: #666;
+  background-color: #fff;
+}
+#utilLogin .inner .loginInfo {
+  width: 40%;
+  height: 500px;
+  background-color: #aaa;
+  border-radius: 30px;
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#utilLogin .inner .loginInfo h1 {
+  font: bold 25px/1 "arial";
+  color: #fff;
+  margin-bottom: 30px;
+}
+#utilLogin .inner .loginInfo .loginBox .inputBox {
+  width: 270px;
+  height: 40px;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #666;
+  margin-bottom: 10px;
+}
+#utilLogin .inner .loginInfo .loginBox .inputBox input {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  border: none;
+  background-color: transparent;
+  color: #222;
+}
+#utilLogin .inner .loginInfo .loginBox .inputBox input:focus ~ span {
+  font: bold 14px/1 "arial";
+  color: #222;
+  padding: 0 10px;
+  z-index: 3;
+  background-color: #fff;
+  transform: translateX(10px) translateY(-7px);
+  border-left: 2px solid rgb(179, 215, 232);
+  border-right: 2px solid rgb(179, 215, 232);
+}
+#utilLogin .inner .loginInfo .loginBox .inputBox span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  z-index: 1;
+  transform: translateX(10px);
+  line-height: 40px;
+  color: #666;
+  transition: 0.5s;
+}
+
+/*# sourceMappingURL=style.css.map */
