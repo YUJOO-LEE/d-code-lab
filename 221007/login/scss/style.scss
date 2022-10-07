@@ -98,6 +98,24 @@ a{ text-decoration: none; }
             transition: 0.5s;
           }
         }
+          
+        a{
+          display: block;
+          width: 100%; padding: 10px;
+          background-color: #222;
+          font: 15px/1.1 'arial'; color: #fff;
+          text-align: center;
+          transition: 0.5s;
+  
+          &:hover{
+            color: #fff;
+            background-color: #666;
+          }
+          &:focus{
+            color: #fff;
+            background-color: #666;
+          }
+        }
       }
     }
   }

@@ -129,5 +129,23 @@ a {
   color: #666;
   transition: 0.5s;
 }
+#utilLogin .inner .loginInfo .loginBox a {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #222;
+  font: 15px/1.1 "arial";
+  color: #fff;
+  text-align: center;
+  transition: 0.5s;
+}
+#utilLogin .inner .loginInfo .loginBox a:hover {
+  color: #fff;
+  background-color: #666;
+}
+#utilLogin .inner .loginInfo .loginBox a:focus {
+  color: #fff;
+  background-color: #666;
+}
 
 /*# sourceMappingURL=style.css.map */

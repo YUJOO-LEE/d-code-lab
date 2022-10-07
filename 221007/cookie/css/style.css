@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inhert;
+}
+
+.del {
+  display: inline-block;
+  padding: 10px 30px;
+  margin: 50px;
+  background-color: lightblue;
+  font: bold 14px/1 "arial";
+  color: #fff;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.del:hover {
+  background-color: rgb(121, 165, 179);
+}
+
+.view {
+  display: inline-block;
+  padding: 10px 30px;
+  margin: 50px;
+  background-color: pink;
+  font: bold 14px/1 "arial";
+  color: #fff;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.view:hover {
+  background-color: rgb(199, 138, 148);
+}
+
+#popup {
+  width: 500px;
+  padding: 40px;
+  background-color: lightblue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+#popup .content {
+  width: 100%;
+  min-height: 200px;
+  font: 30px/1.2 "arial";
+  color: #fff;
+}
+#popup .check {
+  display: inline-flex;
+  align-items: center;
+}
+#popup .check label {
+  color: #fff;
+  margin-left: 10px;
+}
+#popup .close {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */
