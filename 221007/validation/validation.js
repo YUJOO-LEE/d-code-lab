@@ -1,4 +1,4 @@
-const $pwd = document.getElementById('pwd');
+const $pwd = document.querySelector('#pwd');
 const $toggleBtn = document.getElementById('toggleBtn');
 const $lowerCase = document.getElementById('lower');
 const $upperCase = document.getElementById('upper');
@@ -28,11 +28,11 @@ function checkPw(data) {
   const spercialChar = new RegExp('(?=.*[!@#\$%\^&\*])');
   const length = new RegExp('(?=.{8,})');
 
-  lower.test(data) ? setClass($lowerCase, true) : setClass($lowerCase, false);
-  upper.test(data) ? setClass($upperCase, true) : setClass($upperCase, false);
-  number.test(data) ? setClass($number, true) : setClass($number, false);
-  spercialChar.test(data) ? setClass($specialChar, true) : setClass($specialChar, false);
-  length.test(data) ? setClass($length, true) : setClass($length, false);
+  setClass($lowerCase, lower.test(data));
+  setClass($upperCase, upper.test(data));
+  setClass($number, number.test(data));
+  setClass($specialChar, spercialChar.test(data));
+  setClass($length, length.test(data));
 }
 
 function setClass(el, show = false) {
