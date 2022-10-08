@@ -1,4 +1,4 @@
-const $pwd = document.querySelector('#pwd');
+const $pwd = document.getElementById('pwd');
 const $toggleBtn = document.getElementById('toggleBtn');
 const $lowerCase = document.getElementById('lower');
 const $upperCase = document.getElementById('upper');
