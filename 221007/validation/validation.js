@@ -16,8 +16,7 @@ $toggleBtn.addEventListener('click', ()=>{
   }
 })
 
-$pwd.addEventListener('keyup', (e)=>{
-  console.log($pwd.value, e);
+$pwd.addEventListener('keyup', ()=>{
   checkPw($pwd.value);
 })
 
