@@ -10,6 +10,7 @@ function App() {
     height:300,
     background: `url(${image2}) no-repeat center/cover`
   };
+  // 속성 객체 형태로 사용 가능
 
   return (
     <figure>
