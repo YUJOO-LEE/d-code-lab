@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/decodelab/221011/react_basic/static/css/main.4c62071c.css",
+    "main.js": "/decodelab/221011/react_basic/static/js/main.d1bc59c0.js",
+    "static/media/member2.jpg": "/decodelab/221011/react_basic/static/media/member2.3eb5b8f70953864ab1fc.jpg",
+    "static/media/member1.jpg": "/decodelab/221011/react_basic/static/media/member1.b10bb136ec91258b7566.jpg",
+    "index.html": "/decodelab/221011/react_basic/index.html",
+    "main.4c62071c.css.map": "/decodelab/221011/react_basic/static/css/main.4c62071c.css.map",
+    "main.d1bc59c0.js.map": "/decodelab/221011/react_basic/static/js/main.d1bc59c0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4c62071c.css",
+    "static/js/main.d1bc59c0.js"
+  ]
+}
