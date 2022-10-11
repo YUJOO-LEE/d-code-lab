@@ -1,0 +1,93 @@
+.location{
+  .sub_visual{
+    background: url(../img/news2.jpg) no-repeat center/cover;
+  }
+
+  width: 100%;
+
+  .inner{
+    &::after{ content: ''; display: block; clear: both; }
+
+    #map{
+      width: 100%; height: 500px;
+      border: 1px solid #000;
+      margin-bottom: 20px;
+    }
+
+    .traffic{
+      float: left;
+      li{
+        float: left; margin-right: 20px;
+        a{
+          display: block; width: 200px; height: 40px;
+          background-color: #555;
+          font: bold 12px/40px '맑은 고딕';
+          color: #fff; text-align: center;
+          border: 1px solid #555;
+        }
+
+        &.on a{
+          background-color: #fff; color: #333;
+        }
+      }
+    }
+
+    .branch{
+      float: right;
+      li{
+        float: left; margin-left: 20px;
+        a{
+          display: block; width: 200px; height: 40px;
+          background-color: #555;
+          font: bold 12px/40px '맑은 고딕';
+          color: #fff; text-align: center;
+          border: 1px solid #555;
+        }
+
+        &.on a{
+          background-color: #fff; color: #333;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1179px) {
+  .location{
+    .inner{
+      #map{ height: 350px; }
+      .traffic{
+        width: 50%;
+        li{ width: calc(97% / 3); margin-right: 1%;
+          a{ width: 100%; }
+        }
+      }
+      .branch{
+        width: 50%;
+        li{ width: calc(97% / 3); margin-left: 1%;
+          a{ width: 100%; }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 539px) {
+  .location{
+    .inner{
+      #map{ height: 350px; }
+      .traffic{
+        width: 100%; margin-bottom: 20px;
+        li{ width: calc(99% / 2);
+          &:last-of-type{ margin-right: 0; }
+        }
+      }
+      .branch{
+        width: 100%; float: left;
+        li{ width: calc(98% / 3);
+          &:first-of-type{ margin-left: 0; }
+        }
+      }
+    }
+  }
+}
