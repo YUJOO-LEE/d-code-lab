@@ -6,16 +6,12 @@ function Btns(props) {
 
   function minus(e) {
     setIndex(--index);
-    const frame = e.target.closest('figure').querySelector('section');
-    frame.style.transform = `rotate(${props.deg * index}deg)`;
-    console.log(index);
+    props.frame.current.style.transform = `rotate(${props.deg * index}deg)`;
   }
 
   function plus(e) {
     setIndex(++index);
-    const frame = e.target.closest('figure').querySelector('section');
-    frame.style.transform = `rotate(${props.deg * index}deg)`;
-    console.log(index);
+    props.frame.current.style.transform = `rotate(${props.deg * index}deg)`;
   }
 
   /*

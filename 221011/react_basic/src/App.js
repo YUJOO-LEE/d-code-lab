@@ -3,7 +3,7 @@ import Footer from './components/Footer';
 import Header from './components/Layout';
 import Panels from './components/Panels';
 import Btns from './components/Btns';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 /*
 이미지 삽입
@@ -21,6 +21,7 @@ function App() {
   const deg = 360 / arr.length;
   const [txt, setTxt] = useState(arr);
   const showArr = txt.map((data,index)=>{ return <Panels key={index} num={index} txt={data} deg={deg}/> });
+  const frame = useRef(null);
 
   /*
   key 값 부여
@@ -32,10 +33,10 @@ function App() {
   return (
     <figure>
       <Header/>
-        <section>
+        <section ref={frame}>
           {showArr}
         </section>
-        <Btns deg={deg}/>
+        <Btns deg={deg} frame={frame}/>
       <Footer/>
     </figure>
   );
