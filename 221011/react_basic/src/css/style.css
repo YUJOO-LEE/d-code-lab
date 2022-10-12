@@ -52,6 +52,7 @@ figure section {
   top: 150%;
   margin-top: -32vh;
   margin-left: -10vw;
+  transition: 0.5s;
 }
 figure section article {
   width: 100%;
@@ -125,6 +126,98 @@ figure section article .inner .txt p {
   font: 12px/1.2 "arial";
   color: #777;
   margin-bottom: 3vh;
+}
+figure .btnPrev {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-20vw, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+figure .btnPrev span {
+  font: 11px/1 "arial";
+  color: #fff;
+  transform: translateX(30%);
+  transition: 0.5s;
+}
+figure .btnPrev::before, figure .btnPrev::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform-origin: left;
+  transition: 0.5s;
+}
+figure .btnPrev::before {
+  transform: rotate(180deg);
+}
+figure .btnPrev::after {
+  transform: rotate(-180deg);
+}
+figure .btnPrev:hover span {
+  transform: translateX(100%);
+  opacity: 0;
+}
+figure .btnPrev:hover::before {
+  transform: rotate(30deg);
+}
+figure .btnPrev:hover::after {
+  transform: rotate(-30deg);
+}
+figure .btnNext {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(20vw, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+figure .btnNext span {
+  font: 11px/1 "arial";
+  color: #fff;
+  transform: translateX(-30%);
+  transition: 0.5s;
+}
+figure .btnNext::before, figure .btnNext::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform-origin: right;
+  transition: 0.5s;
+}
+figure .btnNext::before {
+  transform: rotate(180deg);
+}
+figure .btnNext::after {
+  transform: rotate(-180deg);
+}
+figure .btnNext:hover span {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+figure .btnNext:hover::before {
+  transform: rotate(30deg);
+}
+figure .btnNext:hover::after {
+  transform: rotate(-30deg);
 }
 figure > p {
   position: absolute;

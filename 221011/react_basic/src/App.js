@@ -2,6 +2,7 @@ import './css/style.css';
 import Footer from './components/Footer';
 import Header from './components/Layout';
 import Panels from './components/Panels';
+import Btns from './components/Btns';
 import { useState } from 'react';
 
 /*
@@ -19,13 +20,8 @@ function App() {
   const arr = ['Blizzards', 'Calm', 'Dusty_Road', 'Escape', 'Payday', 'Retreat', 'Seasonal', 'Vespers'];
   const deg = 360 / arr.length;
   const [txt, setTxt] = useState(arr);
-  const txt2 = [...txt];
   const showArr = txt.map((data,index)=>{ return <Panels key={index} num={index} txt={data} deg={deg}/> });
 
-  function changeState() {
-    txt2[0] = 'Retreat';
-    setTxt(txt2);
-  }
   /*
   key 값 부여
   중복 요소 없어야 함
@@ -35,11 +31,11 @@ function App() {
 
   return (
     <figure>
-      <button onClick={changeState}>버튼</button>
       <Header/>
-      <section>
-        {showArr}
-      </section>
+        <section>
+          {showArr}
+        </section>
+        <Btns deg={deg}/>
       <Footer/>
     </figure>
   );
