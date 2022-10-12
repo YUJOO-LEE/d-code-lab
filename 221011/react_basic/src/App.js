@@ -1,6 +1,8 @@
 import './css/style.css';
 import Footer from './components/Footer';
 import Header from './components/Layout';
+import Panels from './components/Panels';
+import { useState } from 'react';
 
 /*
 이미지 삽입
@@ -14,22 +16,29 @@ style 속성은 객체 형태로 사용
 */
 
 function App() {
+  const arr = ['Blizzards', 'Calm', 'Dusty_Road', 'Escape', 'Payday', 'Retreat', 'Seasonal', 'Vespers'];
+  const deg = 360 / arr.length;
+  const [txt, setTxt] = useState(arr);
+  const txt2 = [...txt];
+  const showArr = txt.map((data,index)=>{ return <Panels key={index} num={index} txt={data} deg={deg}/> });
+
+  function changeState() {
+    txt2[0] = 'Retreat';
+    setTxt(txt2);
+  }
+  /*
+  key 값 부여
+  중복 요소 없어야 함
+  
+  매개변수 대신 prop으로 넘기기
+  */
 
   return (
     <figure>
+      <button onClick={changeState}>버튼</button>
       <Header/>
       <section>
-        <article>
-          <div className='inner'>
-            <div className='pic'>
-              <div className='dot'></div>
-            </div>
-            <div className='txt'>
-              <h2>Title</h2>
-              <p>Description</p>
-            </div>
-          </div>
-        </article>
+        {showArr}
       </section>
       <Footer/>
     </figure>

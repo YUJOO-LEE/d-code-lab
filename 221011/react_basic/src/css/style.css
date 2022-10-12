@@ -17,6 +17,8 @@ figure {
   width: 100%;
   height: 100vh;
   background: linear-gradient(45deg, pink, violet);
+  position: relative;
+  overflow: hidden;
 }
 figure h1 {
   position: absolute;
@@ -47,7 +49,7 @@ figure section {
   height: 65vh;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 150%;
   margin-top: -32vh;
   margin-left: -10vw;
 }
@@ -67,12 +69,62 @@ figure section article .inner {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  border-radius: 1vh;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 figure section article .inner .pic {
   width: 15vw;
   height: 15vw;
   border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
   background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+figure section article .inner .pic::before, figure section article .inner .pic::after {
+  content: "";
+  display: block;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: inherit;
+  background-repeat: inherit;
+  background-position: center;
+  background-size: cover;
+}
+figure section article .inner .pic::before {
+  transform: translateY(10%);
+  filter: blur(29px) brightness(1.6);
+}
+figure section article .inner .pic .dot {
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  background-color: #fff;
+  position: relative;
+  z-index: 3;
+  box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+figure section article .inner .txt {
+  text-align: center;
+  position: relative;
+}
+figure section article .inner .txt h2 {
+  font: bold 20px/1 "arial";
+  color: #222;
+  margin-bottom: 2vh;
+}
+figure section article .inner .txt p {
+  font: 12px/1.2 "arial";
+  color: #777;
+  margin-bottom: 3vh;
 }
 figure > p {
   position: absolute;
