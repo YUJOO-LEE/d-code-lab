@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객체지향</title>
+</head>
+<body>
+  <h1>하이</h1>
+  <div>
+    <p>반갑습니다</p>
+  </div>
+  
+
+  <script>
+    // function FontStyle(el) {
+    //   this.el = document.querySelector(el);
+    // }
+
+    // FontStyle.prototype.changeColor = function(color) {
+    //   this.el.style.color = color;
+    // }
+    // FontStyle.prototype.changeSize = function(size) {
+    //   this.el.style.fontSize = size;
+    // }
+
+    // let h1 = new FontStyle('h1');
+    // let p = new FontStyle('p');
+
+    // ----------
+
+    // function FontStyle(el, color, size) {
+    //   this.el = document.querySelector(el);
+    //   this.changeColor(color);
+    //   this.changeSize(size);
+    // }
+
+    // FontStyle.prototype.changeColor = function(color) {
+    //   this.el.style.color = color;
+    // }
+    // FontStyle.prototype.changeSize = function(size) {
+    //   this.el.style.fontSize = size;
+    // }
+
+
+    // document.querySelector('.btnh1').addEventListener('click', ()=>{
+    //   //h1.changeColor('red');
+    //   new FontStyle('h1','red','14px');
+    // })
+    // document.querySelector('.btnh2').addEventListener('click', ()=>{
+    //   //p.changeColor('blue');
+    //   new FontStyle('p','blue','12px');
+    // })
+
+    //<button class="btnh1">버튼1</button>
+    //<button class="btnh2">버튼2</button>
+
+
+    class FontStyle {
+      constructor(el) {
+        this.el = document.querySelector(el);
+      }
+
+      changeColor(color) {
+        this.el.style.color = color;
+      }
+
+      changeSize(size) {
+        this.el.style.fontSize = size;
+      }
+    }
+
+    const txt1 = new FontStyle('h1');
+    txt1.changeColor('red');
+    txt1.changeSize('50px');
+
+    // class BoxStyle {
+    //   constructor(el) {
+    //     this.el = document.querySelector(el);
+    //   }
+
+    //   changeSize(wid, ht) {
+    //     this.el.style.width = wid;
+    //     this.el.style.height = ht;
+    //   }
+
+    //   changeBg(bg) {
+    //     this.el.style.backgroundColor = bg;
+    //   }
+    // }
+
+
+    class BoxStyle extends FontStyle{
+      constructor(el){
+        super(el);
+      }
+
+      changeBoxSize(wid, ht) {
+        this.el.style.width = wid;
+        this.el.style.height = ht;
+      }
+
+      changeBg(bg) {
+        this.el.style.backgroundColor = bg;
+      }
+    }
+
+    const box = new BoxStyle('div');
+    box.changeBoxSize('200px', '100px');
+    box.changeSize('20px');
+  </script>
+</body>
+</html>

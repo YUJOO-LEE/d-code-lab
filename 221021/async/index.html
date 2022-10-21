@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>동기, 비동기</title>
+</head>
+<body>
+  <script>
+    // function settingTimeout(callback, delay) {
+    //   callback();
+    // }
+
+    // console.log(0);
+    // settingTimeout(()=>{
+    //   console.log('가짜 셋타임 아웃');
+    // }, 0)
+    // console.log(1);
+
+    // console.log(2);
+    // setTimeout(()=>{
+    //   console.log('셋타임 아웃');
+    // }, 0);
+    // console.log(3);
+
+    // ------
+
+    // function delay(sec, callback) {
+    //   setTimeout(()=>{
+    //     callback(new Date().toISOString());
+    //   }, sec * 1000)
+    // }
+
+    // delay(1, (result)=>{
+    //   console.log(1, result);
+
+    //   delay(1,(result)=>{
+    //     console.log(2, result);
+
+    //     delay(1,(result)=>{
+    //       console.log(3, result);
+    //     })
+    //   })
+    // })
+
+    // ------
+
+    // function delay(sec) {
+    //   console.log('시작', new Date().toISOString());
+    //   return new Promise(
+    //     (resolve, reject) => {
+    //       // resolve : 완료 시 호출, reject : 예외, 오류시 호출
+    //       setTimeout(()=>{
+    //         resolve('완료 ' + new Date().toISOString());
+    //       }, sec * 1000)
+    //     }
+    //   )
+    // }
+
+    // const delay = () => {
+    //   return new Promise((resolve, reject)=>{
+    //     setTimeout(()=>{
+    //       resolve('완료 ' + new Date().toISOString());
+    //     }, 1000)
+    //   });
+    // };
+
+    // delay().then((result)=>{
+    //   console.log(1, result);
+    //   return delay();
+    // }).then((result)=>{
+    //   console.log(2, result);
+    //   return delay();
+    // }).then((result)=>{
+    //   console.log(3, result);
+    // })
+
+    //----
+
+    // const delayFunc = (delayTime = 2000, cond = true) => {
+    //   return new Promise((resolve, reject) => {
+    //     console.log('pending...');
+    //     setTimeout(()=>{
+    //       cond ? resolve('정상 실행') : reject('예외 처리');
+    //     }, delayTime)
+    //   })
+    // }
+
+    // delayFunc(2000, true)
+    //   .then(result => {
+    //     console.log(result);
+    //     return result;
+    //   })
+    //   .then(result => {
+    //     console.log(result + 2);
+    //     return delayFunc(1000);
+    //   })
+    //   .then(result => {
+    //     console.log(result + 3);
+    //     return delayFunc(6000, false);
+    //   })
+    //   .catch(err=>{
+    //     console.log(err);
+    //   })
+
+    // console.log('hi');
+
+    //-----
+
+    // function timer(time) {
+    //   return new Promise((resolve, reject) => {
+    //     setTimeout(()=>{
+    //       Boolean ? resolve(time) : reject(false);
+    //     }, time)
+    //   })
+    // }
+
+    // console.time('Promise.all');
+
+    // const loading = Promise.all([timer(1000), timer(2000), timer(3000)])
+    // // Promise.all : 배열에 들어있는 Promise 함수가 모두 실행 완료 되어야 결과 반환
+    // // Promise.race : 배열에 들어있는 Promise 함수들 중 가장 빨리 완료되는 것이 있으면 해당 결과만 반환
+    //   .then((result)=>{
+    //     console.log('결과', result);
+    //     console.timeEnd('Promise.all');
+    //   });
+
+    // loading
+    //   .then((result)=>{
+    //     console.log('로딩 완료');
+    //   })
+    //   .catch((result)=>{
+    //     console.log('로딩 실패');
+    //   })
+    //   .finally(()=>{
+    //     console.log('종료');
+    //   })
+
+    // console.time('Promise.race');
+    
+    // const race = Promise.race([timer(1000), timer(2000), timer(3000)])
+    //   .then((result)=>{
+    //     console.log('결과', result);
+    //     console.timeEnd('Promise.race');
+    //   });
+
+    // race
+    //   .then((result)=>{
+    //     console.log('로딩 완료');
+    //   })
+    //   .catch((result)=>{
+    //     console.log('로딩 실패');
+    //   })
+    //   .finally(()=>{
+    //     console.log('종료');
+    //   })
+
+    //-----
+
+    // function delay() {
+    //   return new Promise((resolve, reject)=>{
+    //     setTimeout(()=>{
+    //       resolve('완료 ' + new Date().toISOString());
+    //     }, 1000)
+    //   });
+    // };
+
+    // async function fistAsync() {
+    //   const result = await delay();
+    //   console.log(result);
+    // }
+    // fistAsync();
+
+    // //console.log(fistAsync());
+
+    // -----
+
+    function delay(time = 2000, cond = true) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          cond ? resolve('success') : reject('fail');
+        }, time);
+      });
+    }
+
+    async function test() {
+      try{
+        const result = await delay(3000, false);
+      } catch(err) {
+        console.log(err);
+      } finally {
+        console.log('종료');
+      }
+    }
+
+    test();
+  </script>
+</body>
+</html>
