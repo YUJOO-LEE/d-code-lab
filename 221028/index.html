@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generator</title>
+</head>
+<body>
+  <script>
+    function test1() {
+      console.log('text1');
+      return 'test1';
+    }
+    function test2() {
+      console.log('text2');
+      return 'test2';
+    }
+    function test3() {
+      console.log('text3');
+      return 'test3';
+    }
+    function test4() {
+      console.log('text4');
+      return 'test4';
+    }
+
+    function* generator() {
+      yield test1();
+      yield test2();
+      yield test3();
+    }
+
+    const result = generator();
+
+    const a = result.next();
+    console.log(a);
+    
+    const b = result.next();
+    console.log(b);
+
+    const c = result.next();
+    console.log(c);
+
+    const d = result.next();
+    console.log(d);
+    
+  </script>
+</body>
+</html>
+<!-- 
+
+  Generator
+  1. wrapping 함수 생성시 * 추가
+  2. 내부 함수 호출문 앞에 yield 문 추가
+  3. 해당 wrapping 함수 호출 시 return으로 iterable 객체 반환 (인스턴스)
+  4. 반환된 iterable 객체에 next() 메서드 호출 가능
+  5. 해당 메서드를 이용해서 순차적으로 원하는 순간에 함수를 동기적으로 호출
+
+ -->
