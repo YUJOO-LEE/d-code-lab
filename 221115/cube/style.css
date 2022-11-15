@@ -25,7 +25,25 @@ body {
   border: 1px solid #000;
   position: relative;
   transform-style: preserve-3d;
-  animation: ani 3s linear infinite;
+  transition: 0.5s;
+}
+#wrap.face1 {
+  transform: rotateX(0deg) rotateY(0deg);
+}
+#wrap.face2 {
+  transform: rotateX(0deg) rotateY(-90deg);
+}
+#wrap.face3 {
+  transform: rotateX(0deg) rotateY(-180deg);
+}
+#wrap.face4 {
+  transform: rotateX(0deg) rotateY(-270deg);
+}
+#wrap.face5 {
+  transform: rotateX(-90deg) rotateY(0deg);
+}
+#wrap.face6 {
+  transform: rotateX(-270deg) rotateY(0deg);
 }
 #wrap > article {
   width: 100%;
@@ -72,6 +90,15 @@ body {
   100% {
     transform: rotateX(360deg);
   }
+}
+ul {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  display: flex;
+  gap: 30px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
