@@ -18,3 +18,13 @@ window.addEventListener('scroll', ()=>{
     }
   })
 })
+
+btns.forEach((btn, idx)=>{
+  btn.addEventListener('click', ()=>{
+    new Anime(window, {
+      prop: 'scroll',
+      value: distance * idx,
+      duration: 1000,
+    })
+  })
+})
