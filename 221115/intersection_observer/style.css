@@ -6,23 +6,23 @@
 
 body {
   width: 100%;
+  height: 100%;
   overflow-x: hidden;
 }
 
 section {
-  max-width: 350px;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  align-items: flex-start;
-  margin: 0 auto;
-  padding: 50px 20px;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  overflow-y: auto;
 }
 section article {
-  width: 100%;
+  width: 350px;
+  height: 180px;
+  margin: 0 auto;
+  margin-bottom: 40px;
   background: #fff;
   border-radius: 16px;
-  height: 180px;
   padding: 40px;
   transition-timing-function: cubic-bezier(0.55, -1.29, 0.44, 1.9);
   color: #fff;

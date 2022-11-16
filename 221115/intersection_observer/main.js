@@ -7,7 +7,7 @@ const section = document.querySelector('section');
 const boxs = section.querySelectorAll('article');
 
 let options = {
-  root: document,
+  root: section,
   rootMargin: '0px',
   threshold: 1.0
 }
