@@ -5,6 +5,13 @@ intersection observer
 
 const section = document.querySelector('section');
 const boxs = section.querySelectorAll('article');
+
+let options = {
+  root: document,
+  rootMargin: '0px',
+  threshold: 1.0
+}
+
 const observer = new IntersectionObserver((entries)=>{
   entries.forEach((entry)=>{
     console.log(entry);
@@ -17,7 +24,7 @@ const observer = new IntersectionObserver((entries)=>{
     // target : 감시 대상 요소
     // time : 로드된 시점부터 감시 요소의 상태가 변경되기 까지의 시간
   })
-}, { threshold: 1})
+}, options)
   // 화면에 보여지는 비율
   // 0 = 조금이라도 노출 시 isIntersecting: true
   // 1 = 완전히 노출 시 isIntersecting: true
